@@ -1,8 +1,8 @@
 import React from "react";
 
-import Greeting from "./greetings";
+import Content from "./content";
 
 React.render(
-  <Greeting name="Mundito" />,
+  <Content name="Mundito Loco" />,
   document.body
 )
