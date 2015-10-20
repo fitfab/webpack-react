@@ -47,14 +47,13 @@ body, h1, h2, h3, h4, h5, h6, p {
     z-index: -1;
   }
   .brand-logo {
-    background: $accent-color;
+    background: url(../images/fitfab_logo_2011.png);
     opacity: .9;
-    color: $white-color;
-    /*position: absolute;
-    top: 0;
-    right: 90%;
-    bottom: 0;
-    left: 5%;*/
+    color: transparent;
+    width: 158px;
+    height: 43px;
+    margin: 20px;
+    cursor: pointer;
   }
 
   footer {
