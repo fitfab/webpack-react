@@ -8,6 +8,11 @@ body, h1, h2, h3, h4, h5, h6, p {
   font-family: 'Work Sans', sans-serif;
   -webkit-font-smoothing: antialiased 
 }
+/* Helper classes */
+.align-right {
+  float: right;
+}
+
 /* Transition definitions */
 .transit {
 
@@ -59,21 +64,37 @@ body, h1, h2, h3, h4, h5, h6, p {
     cursor: pointer;
   }
 
+  nav {
+    background: $babel;
+    a {
+      display: inline-block;
+      padding: 0 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      &:hover {
+        background: $dark-primary-color;
+        color: $white-color;
+      }
+      &.selected {
+        background: $dark-primary-color;
+        color: $white-color;
+      }
+    }
+  }
+
   footer {
     background: $dark-primary-color;
     color: $white-color;
     position: absolute;
-    top: 95%;
+    height: 20px;
     right: 0;
     bottom: 0;
     left: 0;
+    padding: 0 20px;
 
     p {
-      /*transform: rotate(90deg);
-      transform-origin: left top 0;
-      float: left;
-      width: 100%;
-      background: #eee;*/
+      font-size: 10px;
+      line-height: 2;
     }
     
   }
