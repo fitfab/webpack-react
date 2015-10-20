@@ -8,7 +8,7 @@ export default React.createClass({
     return (
       <header>
         <h1 className="brand-logo" onClick={this.about}>
-          fitfab by Miguel Julio
+          fitfab
         </h1>
       </header>
     )
