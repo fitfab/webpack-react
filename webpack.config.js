@@ -1,3 +1,4 @@
+var webpack = require('webpack');
 module.exports = {
   context: __dirname + "/src",
   entry: {
@@ -18,9 +19,9 @@ module.exports = {
         loader: 'style!css!sass'
       },
       {
-        test: /\.jsx$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: ["react-hot", "babel-loader"],
+        loader: 'react-hot!babel'
       },
       {
         test: /\.html$/,

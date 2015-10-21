@@ -1,7 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import Content from "./app";
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+import App from './app';
+import AppReducer from './reducer';
+
+/**
+ * Create a store from the reducer
+ * @type {[type]}
+ */
+let store = createStore(AppReducer);
 
 /**
  * Warning: render(): Rendering components directly into
@@ -20,6 +30,8 @@ let root = document.getElementById('root');
  * from require('react-dom') instead.
  */
 ReactDOM.render(
-  <Content name="Mundito Loco" />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   root
 )
