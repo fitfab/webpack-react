@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import App from './app';
+import { App, AppContainer } from './app';
 import AppReducer from './reducer';
 
 /**
@@ -12,7 +12,8 @@ import AppReducer from './reducer';
  * @type {[type]}
  */
 let store = createStore(AppReducer);
-
+store.dispatch({type:'INITIAL_STATE'});
+console.log("state after store.dispatch({type:'INITIAL_STATE'}): ",store.getState())
 /**
  * Warning: render(): Rendering components directly into
  * document.body is discouraged,
@@ -31,7 +32,7 @@ let root = document.getElementById('root');
  */
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <App {...store} />
   </Provider>,
   root
 )

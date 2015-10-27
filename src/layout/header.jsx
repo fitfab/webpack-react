@@ -1,10 +1,16 @@
-import React from "react";
+import React from 'react';
+import { connect } from 'react-redux';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
-export default React.createClass({
-  about: () => {
-    alert('by Miguel Julio')
+
+export const Header = React.createClass({
+  //mixins: [PureRenderMixin],
+  about: function() {
+    console.log(this.props.getState());
   },
   render: function(){
+    // injected by connect() call at the bottom
+    {console.log('header: ', this.props)}
     return (
       <header>
         <h1 className="brand-logo" onClick={this.about}>

@@ -1,26 +1,43 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { SIGN_IN, SIGN_OUT, BUSY } from './actionTypes';
-import Header from './layout/header';
+import * as actionCreators from './actions-creators';
+
+import { Header, HeaderContainer } from './layout/header';
 import Footer from './layout/footer';
 
 require('./scss/app.scss'); 
 
-export default React.createClass({
-  getInitialState: function() {
-    return null;
+export const App = React.createClass({
+  handleClick: function(){
+    console.log('App:Click', this.props.getState())
   },
-  render: function(){
-    // injected by connect() call at the bottom
+  render: function() {
+    // injected by connect() call
     const { dispatch } = this.props;
+    {console.log('App: ',this.props.getState())}
     return (
       <div className="app-wrapper transit">
-        <Header />
+        <Header {...this.props} />
         <div className="greets">
-          <h2>Hello, {this.props.name} ;-)</h2>
+          <h2 onClick={() => { this.handleClick()}}>Hello </h2>
         </div>
         <Footer />
       </div>
     )
   }
 });
+
+function mapStateToProps(state){
+  return {
+    secureUser: state.get('secureUser'),
+    loading: state.get('loading'),
+    products: state.get('products'),
+    user: state.get('user')
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  actionCreators
+  )(App) 

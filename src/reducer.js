@@ -2,7 +2,7 @@
  * Reducer(Redux)
  */
 
-import { SIGN_IN, SIGN_OUT, BUSY } from './actionTypes';
+import { INITIAL_STATE, SIGN_IN, SIGN_OUT, BUSY } from './actionTypes';
 
 /**
  * Initial state of the application
@@ -10,16 +10,20 @@ import { SIGN_IN, SIGN_OUT, BUSY } from './actionTypes';
  */
 let initialState = {
   secureUser: false,
-  loading: false
+  loading: false,
+  products: [],
+  user: {}
 }
 
 /**
  * Application Reducer(MVC? ohh this is controller from mvC!!)
- * @param {[type]} state  initial value
+ * @param {[type]} state 
  * @param {[type]} action next value after the action`
  */
-function AppReducer(state= initialState, action) {
+function AppReducer(state, action) {
   switch (action.type) {
+    case INITIAL_STATE:
+      return state = initialState;
     case SIGN_IN:
       // return the next state of the appliaction
       // this is equal to:
