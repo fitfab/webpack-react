@@ -10,17 +10,19 @@ require('./scss/app.scss');
 
 export const App = React.createClass({
   handleClick: function(){
-    console.log('App:Click', this.props.getState())
+    
+    this.props.dispatch({ type: 'BUSY'});
+    console.log('App:Click', this.props.getState());
   },
   render: function() {
     // injected by connect() call
     const { dispatch } = this.props;
-    {console.log('App: ',this.props.getState())}
+    {console.log('App: ',this.props)}
     return (
       <div className="app-wrapper transit">
-        <Header {...this.props} />
+        <Header {...this.props.getState()}  onClick={() => { this.handleClick()}} />
         <div className="greets">
-          <h2 onClick={() => { this.handleClick()}}>Hello </h2>
+          <h2>Hello </h2>
         </div>
         <Footer />
       </div>
