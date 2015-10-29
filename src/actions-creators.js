@@ -3,25 +3,25 @@
  * 
  */
 
-import { SIGN_IN, SIGN_OUT, BUSY } from './actionTypes';
+import { SIGN_IN, SIGN_OUT, BUSY, SET_STATE } from './actionTypes';
 
-export function signin(){
+export function signin(state){
   return {
     type: SIGN_IN,
-    secureUser: true
+    state
   }
 }
 
-export function signout(){
+export function signout(state){
   return {
     type: SIGN_OUT,
-    secureUser: false
+    state
   }
 }
 
-export function busy(){
+export function busy(state){
   return {
     type: BUSY,
-    loading: true
+    state
   }
 }

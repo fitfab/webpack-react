@@ -1,28 +1,29 @@
 /**
  * Reducer(Redux)
  */
-
-import { INITIAL_STATE, SIGN_IN, SIGN_OUT, BUSY } from './actionTypes';
+import { Map, List } from 'immutable';
+import { SIGN_IN, SIGN_OUT, BUSY, SET_STATE } from './actionTypes';
 
 /**
  * Initial state of the application
  * @type {Object}
  */
-let initialState = {
+let initialState = Map({
   secureUser: false,
-  loading: false,
-  products: [],
-  user: {}
-}
+  busy: false,
+  overlayActive: false,
+  products: List(),
+  user: Map()
+})
 
 /**
  * Application Reducer(MVC? ohh this is controller from mvC!!)
  * @param {[type]} state 
  * @param {[type]} action next value after the action`
  */
-function AppReducer(state, action) {
+function AppReducer(state = Map(), action) {
   switch (action.type) {
-    case INITIAL_STATE:
+    case SET_STATE:
     console.log('reducer:INITIAL_STATE')
       return state = initialState;
     case SIGN_IN:
@@ -34,7 +35,7 @@ function AppReducer(state, action) {
       return {...state, secureUser: false};
     case BUSY:
       console.log('reducer:BUSY')
-      return {...state, loading:!state.loading}
+      return {...state, busy:!state.get('busy')}
     defautl:
       return state;
   }

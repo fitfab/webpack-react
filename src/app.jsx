@@ -20,7 +20,7 @@ export const App = React.createClass({
     {console.log('App: ',this.props)}
     return (
       <div className="app-wrapper transit">
-        <Header {...this.props.getState()}  onClick={() => { this.handleClick()}} />
+        <Header {...this.props.getState()} />
         <div className="greets">
           <h2>Hello </h2>
         </div>
