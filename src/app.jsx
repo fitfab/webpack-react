@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { SIGN_IN, SIGN_OUT, BUSY } from './actionTypes';
 import * as actionCreators from './actions-creators';
 
-import { Header, HeaderContainer } from './layout/header';
-import Footer from './layout/footer';
+import { Header, HeaderContainer } from './container/header';
+import Footer from './container/footer';
 
 require('./scss/app.scss'); 
 
