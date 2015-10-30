@@ -55,29 +55,48 @@ body, h1, h2, h3, h4, h5, h6, p {
     z-index: -1;
   }
   .brand-logo {
-    background: url(./../images/fitfab_logo_2011.png);
+    /* background: url(./../images/fitfab_logo_2011.png); */
+    background: $accent-color;
+    border-radius: 50px;
     opacity: .9;
-    color: transparent;
-    width: 158px;
-    height: 43px;
+    /* color: transparent; */
+    width: 50px;
+    height: 50px;
     margin: 20px;
     cursor: pointer;
+    overflow: hidden;
+    color: #fff;
+    span {
+      margin-left: -5px;
+      line-height: 50px;
+      font-weight: 700;
+    }
+    b { 
+      margin: 0px 1px;
+      font-size: 20px;
+      line-height: 50px;
+    }
+    i {
+      margin-left: -5px;
+      line-height: 50px;
+    }   
   }
 
   nav {
-    background: $babel;
+    background: $accent-color;
     a {
       display: inline-block;
       padding: 0 20px;
       text-decoration: none;
       text-transform: uppercase;
+      color: $white;
       &:hover {
-        background: $dark-primary-color;
-        color: $white-color;
+        background: $white;
+        color: $black;
       }
       &.active {
-        background: $dark-primary-color;
-        color: $white-color;
+        background: $white;
+        color: $black;
       }
     }
   }

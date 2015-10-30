@@ -20,7 +20,9 @@ export const Header = React.createClass({
 
       <header>
         <h1 className="brand-logo">
-          fitfab
+          <span>R</span>
+          <b>2</b>
+          <i>W</i>
         </h1>
         <nav>
           <a href="#overlay" className="selected">
