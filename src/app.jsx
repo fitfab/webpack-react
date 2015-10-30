@@ -16,6 +16,7 @@ export const App = React.createClass({
     {console.log(this.props.getState())}
     return (
       <div className="app-wrapper transit">
+        {console.log(this.props.getState())}
         <Header {...this.props} />
         <div className="greets">
           <h2>Hello </h2>

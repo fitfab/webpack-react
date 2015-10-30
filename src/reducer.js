@@ -8,13 +8,13 @@ import { SIGN_IN, SIGN_OUT, BUSY, SET_STATE, OVERLAY_OPEN, OVERLAY_CLOSE } from 
  * Initial state of the application
  * @type {Object}
  */
-let initialState = Map({
-  secureUser: false,
+const initialState = {
+  secureUser: true,
   busy: false,
   overlayActive: false,
-  products: List(),
-  user: Map()
-})
+  products: [10,12,23,78,96],
+  user: {name:'Miguel',username: 'fitfab', location: 'NYC'}
+}
 
 
 /**
@@ -25,7 +25,7 @@ let initialState = Map({
 function AppReducer(state = initialState, action) {
   switch (action.type) {
     case SET_STATE:
-    console.log('reducer:SET_STATE')
+    console.log('reducer:SET_STATE', initialState)
       return state = initialState;
     case SIGN_IN:
       // return the next state of the appliaction
@@ -33,10 +33,10 @@ function AppReducer(state = initialState, action) {
       // _extends({}, state, { secureUser: true });
       return {...state, secureUser: true};
     case SIGN_OUT:
-      return {...state, secureUser: false};
+      return {...state, secureUser: false, user: {name: 'login'}};
     case BUSY:
-      console.log('reducer:BUSY', state.get('secureUser'))
-      return {...state, busy:!state.get('busy')};
+      console.log('reducer:BUSY', state.busy)
+      return {...state, busy:!state.busy};
     case OVERLAY_OPEN:
       return {...state, overlayActive: true};
     case OVERLAY_CLOSE:
