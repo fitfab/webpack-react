@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
+import { Map } from 'immutable';
 
+import { SIGN_IN, SIGN_OUT, BUSY, SET_STATE, OVERLAY_OPEN, OVERLAY_CLOSE } from './../actionTypes';
 
 export const Header = React.createClass({
   mixins: [PureRenderMixin],
   render: function(){
-    // injected by connect() call at the bottom
-    {console.log('header: ', this.props)}
+    {console.log('Header:render: ',this.props.getState())}
     return (
       <header>
         <h1 className="brand-logo">
@@ -15,9 +16,9 @@ export const Header = React.createClass({
         </h1>
         <nav>
           <a href="#overlay" className="selected">
-            Overlay {this.props.loading? 'close': 'open'}
+            Products
           </a> 
-          <a href="#Ajax">Ajax</a>
+
           <a href="#login" className="align-right">Login</a>
         </nav>
       </header>

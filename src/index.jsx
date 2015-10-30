@@ -12,8 +12,8 @@ import AppReducer from './reducer';
  * @type {[type]}
  */
 let store = createStore(AppReducer);
-store.dispatch({type:'INITIAL_STATE'});
-console.log("store.dispatch({type:'INITIAL_STATE'}): ",store.getState())
+//store.dispatch({type:'SET_STATE'});
+console.log("store.getState(): ",store.getState())
 /**
  * Warning: render(): Rendering components directly into
  * document.body is discouraged,

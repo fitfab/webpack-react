@@ -2,7 +2,7 @@
  * Reducer(Redux)
  */
 import { Map, List } from 'immutable';
-import { SIGN_IN, SIGN_OUT, BUSY, SET_STATE } from './actionTypes';
+import { SIGN_IN, SIGN_OUT, BUSY, SET_STATE, OVERLAY_OPEN, OVERLAY_CLOSE } from './actionTypes';
 
 /**
  * Initial state of the application
@@ -16,15 +16,16 @@ let initialState = Map({
   user: Map()
 })
 
+
 /**
  * Application Reducer(MVC? ohh this is controller from mvC!!)
  * @param {[type]} state 
  * @param {[type]} action next value after the action`
  */
-function AppReducer(state = Map(), action) {
+function AppReducer(state = initialState, action) {
   switch (action.type) {
     case SET_STATE:
-    console.log('reducer:INITIAL_STATE')
+    console.log('reducer:SET_STATE')
       return state = initialState;
     case SIGN_IN:
       // return the next state of the appliaction
@@ -34,8 +35,12 @@ function AppReducer(state = Map(), action) {
     case SIGN_OUT:
       return {...state, secureUser: false};
     case BUSY:
-      console.log('reducer:BUSY')
-      return {...state, busy:!state.get('busy')}
+      console.log('reducer:BUSY', state.get('secureUser'))
+      return {...state, busy:!state.get('busy')};
+    case OVERLAY_OPEN:
+      return {...state, overlayActive: true};
+    case OVERLAY_CLOSE:
+      return {...state, overlayActive: false}
     defautl:
       return state;
   }

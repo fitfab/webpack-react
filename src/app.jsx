@@ -9,18 +9,14 @@ import Footer from './container/footer';
 require('./scss/app.scss'); 
 
 export const App = React.createClass({
-  handleClick: function(){
-    
-    this.props.dispatch({ type: 'BUSY'});
-    console.log('App:Click', this.props.getState());
-  },
   render: function() {
     // injected by connect() call
     const { dispatch } = this.props;
-    {console.log('App: ',this.props)}
+    {console.log('App: ',this.props.dispatch({type:BUSY}))}
+    {console.log(this.props.getState())}
     return (
       <div className="app-wrapper transit">
-        <Header {...this.props.getState()} />
+        <Header {...this.props} />
         <div className="greets">
           <h2>Hello </h2>
         </div>
@@ -33,7 +29,7 @@ export const App = React.createClass({
 function mapStateToProps(state){
   return {
     secureUser: state.get('secureUser'),
-    loading: state.get('loading'),
+    busy: state.get('busy'),
     products: state.get('products'),
     user: state.get('user')
   };
