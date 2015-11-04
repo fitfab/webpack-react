@@ -4,8 +4,8 @@
  */
 
 export const SET_STATE = 'SET_STATE';
-export const SIGN_IN = 'SIGN_IN';
-export const SIGN_OUT = 'SIGN_OUT';
+export const TOGGLE_USER = 'TOGGLE_USER';
+export const TOGGLE_OVERLAY = 'TOGGLE_OVERLAY';
 export const BUSY = 'BUSY';
-export const OVERLAY_CLOSE = 'OVERLAY_CLOSE';
-export const OVERLAY_OPEN = 'OVERLAY_OPEN';
+
+
