@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { SIGN_IN, SIGN_OUT, BUSY } from './../actionTypes';
 import * as actionCreators from './../action-creators';
 
 import { Header, HeaderContainer } from './header';
@@ -11,13 +12,12 @@ export const App = React.createClass({
   render: function() {
     // injected by connect() call
     const { dispatch } = this.props;
-    {console.log('App:render: ',this.props.getState())}
+
+    {console.log(this.props.getState())}
     return (
       <div className="app-wrapper transit">
+        {console.log(this.props.getState())}
         <Header {...this.props} />
-        <div className="greets">
-      
-        </div>
         <Footer />
       </div>
     )
