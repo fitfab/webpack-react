@@ -2,18 +2,24 @@
  * Reducer(Redux)
  */
 import { Map, List } from 'immutable';
-import { SIGN_IN, SIGN_OUT, BUSY, SET_STATE, OVERLAY_OPEN, OVERLAY_CLOSE } from './actionTypes';
+import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, BUSY } from './actionTypes';
 
 /**
  * Initial state of the application
  * @type {Object}
  */
 const initialState = {
-  secureUser: true,
+  secureUser: false,
   busy: false,
   overlayActive: false,
-  products: [10,12,23,78,96],
-  user: {name:'Miguel',username: 'fitfab', location: 'NYC'}
+  products: [
+    {name: 'Never Say Goodbye', price:'100', year: '1980'},
+    {name: 'Hello', price:'11', year: '2015'},
+    {name: 'we dont need another hero', price:'25', year: '1984'},
+    {name: 'Besame', price:'5', year: '1960'},
+    {name: 'Azucar', price:'13', year: '1988'},
+  ],
+  user: {firstName:'Miguel', lastName: 'julio', username: 'fitfab', location: 'NYC'}
 }
 
 
@@ -25,22 +31,16 @@ const initialState = {
 function AppReducer(state = initialState, action) {
   switch (action.type) {
     case SET_STATE:
-    console.log('reducer:SET_STATE', initialState)
       return state = initialState;
-    case SIGN_IN:
+    case TOGGLE_USER:
       // return the next state of the appliaction
       // this is equal to:
       // _extends({}, state, { secureUser: true });
-      return {...state, secureUser: true};
-    case SIGN_OUT:
-      return {...state, secureUser: false, user: {name: 'login'}};
+      return {...state, secureUser: !state.secureUser}
     case BUSY:
-      console.log('reducer:BUSY', state.busy)
       return {...state, busy:!state.busy};
-    case OVERLAY_OPEN:
-      return {...state, overlayActive: true};
-    case OVERLAY_CLOSE:
-      return {...state, overlayActive: false}
+    case TOGGLE_OVERLAY:
+      return {...state, overlayActive: !state.overlayActive};
     defautl:
       return state;
   }

@@ -1,21 +1,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
+
+// TODO: do i need the pure render mixin? probably not
+// i am changing the state
+//import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 
-import { SIGN_IN, SIGN_OUT, BUSY, SET_STATE, OVERLAY_OPEN, OVERLAY_CLOSE } from './../actionTypes';
+import { toggleUser, busy, overlayopen, overlayclose } from './../action-creators';
 
 export const Header = React.createClass({
-  mixins: [PureRenderMixin],
+  displayName: 'Header',
+  getInitialState: function(){
+    return {...this.props.getState()}
+  },
 
   userLogin: function(e){
     e.preventDefault();
-    this.props.dispatch({type: SIGN_OUT});
-    console.log(this.props.getState())
+    this.props.dispatch(toggleUser());
+    this.setState(this.props.getState())
   },
 
   render: function(){
-    console.log('Header:render: ',this.props)
+    console.log('Header:render: ',this.state)
     return (
 
       <header>
@@ -24,14 +30,17 @@ export const Header = React.createClass({
           <b>2</b>
           <i>W</i>
         </h1>
+        
         <nav>
           <a href="#overlay" className="selected">
             Products {this.props.getState}
           </a> 
-
-          <a href="#login" className="align-right" onClick={this.userLogin}>
-            {this.props.getState().secureUser? this.props.getState().user.name : 'login'}
-          </a>
+          <p className="user-area align-right transit">
+            {this.props.getState().secureUser? `welcome ${this.props.getState().user.firstName}` : ''}
+            <a href="#login" onClick={this.userLogin}>
+              {this.props.getState().secureUser? 'Logout' : 'login'}
+            </a>
+          </p> 
         </nav>
       </header>
     )
