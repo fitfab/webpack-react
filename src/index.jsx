@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import { App, AppContainer } from './container/app';
-import AppReducer from './reducer';
+import AppWrapper from './container/AppWrapper';
+import configureStore from './store/configureStore';
 
 /**
  * Create a store from the reducer
  * @type {[type]}
  */
-let store = createStore(AppReducer);
+let store = configureStore();
 store.dispatch({type:'SET_STATE'});
 
 /**
@@ -32,7 +30,7 @@ let root = document.getElementById('root');
  */
 ReactDOM.render(
   <Provider store={store}>
-    <App {...store} />
+    <AppWrapper />
   </Provider>,
   root
 )

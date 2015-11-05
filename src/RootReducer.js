@@ -27,7 +27,7 @@ const initialState = {
  * @param {[type]} state 
  * @param {[type]} action next value after the action`
  */
-function AppReducer(state = initialState, action) {
+export default function RooReducer(state = initialState, action) {
   console.log(action)
   switch (action.type) {
     case SET_STATE:
@@ -45,5 +45,3 @@ function AppReducer(state = initialState, action) {
       return state;
   }
 }
-
-export default AppReducer;
