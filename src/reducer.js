@@ -1,7 +1,6 @@
 /**
  * Reducer(Redux)
  */
-import { Map, List } from 'immutable';
 import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, BUSY } from './actionTypes';
 
 /**
@@ -29,6 +28,7 @@ const initialState = {
  * @param {[type]} action next value after the action`
  */
 function AppReducer(state = initialState, action) {
+  console.log(action)
   switch (action.type) {
     case SET_STATE:
       return state = initialState;

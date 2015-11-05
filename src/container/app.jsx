@@ -13,10 +13,8 @@ export const App = React.createClass({
     // injected by connect() call
     const { dispatch } = this.props;
 
-    {console.log(this.props.getState())}
     return (
       <div className="app-wrapper transit">
-        {console.log(this.props.getState())}
         <Header {...this.props} />
         <Footer />
       </div>

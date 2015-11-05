@@ -1,21 +1,18 @@
 import React from 'react';
 
-import { Header, HeaderContainer } from './header';
-import Footer from './footer';
 
 require('./../scss/app.scss'); 
 
-export const Content = React.createClass({
-  displaName: 'Content',
-  propTYpes: {
-  },
+export default React.createClass({
+  displayName: 'Content',
   render: function() {
     // injected by connect() call
-    const { dispatch } = this.props;
+    const { dispatch, toggleUser, toggleOverlay, busy } = this.props;
     return (
       <div className="app-wrapper transit">
-        <Header />
-        <Footer />
+        <button>Overlay</button>
+        <button>Login</button>
+        <button>Loading</button>
       </div>
     )
   }

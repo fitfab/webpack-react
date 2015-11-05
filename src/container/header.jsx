@@ -16,7 +16,7 @@ export const Header = React.createClass({
 
   userLogin: function(e){
     e.preventDefault();
-    this.props.dispatch(toggleUser());
+    this.props.dispatch(toggleUser(this.state));
     this.setState(this.props.getState())
   },
 
