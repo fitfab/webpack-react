@@ -1,5 +1,7 @@
 import React from 'react';
 
+import UserAvatar from './../components/UserAvatar';
+
 export default React.createClass({
   render: function(){
     // injected by connect() call
@@ -9,15 +11,11 @@ export default React.createClass({
       <nav>
         <a href="#overlay" onClick={toggleOverlay}>Overlay</a>
         <a href="#products">Product</a>
-        <b className="user-area aling-right">
-          {secureUser? `Welcome ${user.firstName} ` : ''}
-          <a href="#login" onClick={toggleUser}>
+          <a href="#login" className="align-right transit" onClick={toggleUser}>
             {secureUser? 'Logout' : 'Login'}
           </a>
-        </b>
-        <div className="tooltip">
-         food this again
-        </div>
+
+        <UserAvatar {...this.props} />
       </nav>
     )
   }
