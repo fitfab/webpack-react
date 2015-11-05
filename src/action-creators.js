@@ -3,7 +3,7 @@
  * 
  */
 
-import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, BUSY } from './actionTypes';
+import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, TOGGLE_BUSY } from './actionTypes';
 
 export function toggleUser(state) {
   return {
@@ -12,9 +12,9 @@ export function toggleUser(state) {
   }
 }
 
-export function busy(state){
+export function toggleBusy(state){
   return {
-    type: BUSY,
+    type: TOGGLE_BUSY,
     state
   }
 }
@@ -28,7 +28,7 @@ export function setstate(state){
 
 export function toggleOverlay(state) {
   return {
-    type: OVERLAY_OPEN,
+    type: TOGGLE_OVERLAY,
     state 
   }
 }

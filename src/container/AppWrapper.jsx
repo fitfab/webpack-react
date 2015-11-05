@@ -11,7 +11,6 @@ import * as actionCreators from './../action-creators';
  * @return {object} props for the component
  */
 function mapStateToProps(state) {
-  console.log(state)
   return {
     secureUser: state.secureUser,
     busy: state.busy,
