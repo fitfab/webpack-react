@@ -63,14 +63,35 @@ body, h1, h2, h3, h4, h5, h6, p {
       line-height: 50px;
     }   
   }
+  .user-detail {
+    position: absolute;
+    width: 160px;
+    height: 80px;
+    border: 1px solid $white;
+    border-radius: 4px;
+
+    &:after {
+      content: "";
+      display: block;
+      transform: rotate(45deg);
+      background: pink;
+            height: 20px;
+      width: 20px;
+      position: absolute;
+      top: 70px;
+      left: 70px;
+    } 
+  }
   nav {
     background: $accent-color;
+    position: relative;
     .user-area {
-      color: $white;
+      display: inline-block;
+      float: right;
     }
     a {
       display: inline-block;
-      padding: 0 20px;
+      padding: 5px 20px;
       text-decoration: none;
       text-transform: uppercase;
       color: $white;
@@ -101,4 +122,51 @@ body, h1, h2, h3, h4, h5, h6, p {
     }
     
   }
+
+  /* arrow */
+  .tooltip { 
+    width: auto;
+    position: absolute; 
+    background: $white; 
+    border: 1px solid $dark-primary-color; 
+    border-radius: 4px;
+    top: -15px;
+    right: 10px;
+    padding: 10px;
+    opacity: 0;
+    z-index: -10;
+
+    &.active {
+      top: -47px;
+      opacity: 10;
+      z-index: 2;
+    }
+
+    /* Share defintion for sudo classes */
+    &:after,
+    &:before {
+      top: 100%; 
+      left: 80%; 
+      border: solid transparent; 
+      content: " "; 
+      height: 0; 
+      width: 0; 
+      position: absolute; 
+      pointer-events: none;
+    }
+
+    &:after {
+      border-color: rgba(136, 183, 213, 0); 
+      border-top-color: $white; 
+      border-width: 9px; margin-left: -9px;
+    }
+
+    &:before {
+      border-color: rgba(194, 225, 245, 0); 
+      border-top-color: $dark-primary-color; 
+      border-width: 10px; 
+      margin-left: -10px;
+    }
+  } 
+
 }

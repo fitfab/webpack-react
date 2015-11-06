@@ -1,8 +1,7 @@
 /**
  * Reducer(Redux)
  */
-import { Map, List } from 'immutable';
-import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, BUSY } from './actionTypes';
+import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, BUSY } from './../actions/actionTypes';
 
 /**
  * Initial state of the application
@@ -28,7 +27,7 @@ const initialState = {
  * @param {[type]} state 
  * @param {[type]} action next value after the action`
  */
-function AppReducer(state = initialState, action) {
+export default function RooReducer(state = initialState, action) {
   switch (action.type) {
     case SET_STATE:
       return state = initialState;
@@ -40,10 +39,9 @@ function AppReducer(state = initialState, action) {
     case BUSY:
       return {...state, busy:!state.busy};
     case TOGGLE_OVERLAY:
+
       return {...state, overlayActive: !state.overlayActive};
     defautl:
       return state;
   }
 }
-
-export default AppReducer;
