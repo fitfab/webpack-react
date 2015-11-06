@@ -1,7 +1,7 @@
 /**
  * Reducer(Redux)
  */
-import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, BUSY } from './actionTypes';
+import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, BUSY } from './../actions/actionTypes';
 
 /**
  * Initial state of the application

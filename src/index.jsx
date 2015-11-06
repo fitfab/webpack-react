@@ -6,12 +6,10 @@ import AppWrapper from './container/AppWrapper';
 import configureStore from './store/configureStore';
 
 /**
- * Create a store using
- * middleware from redux
+ * Create a store from the reducer
+ * @type {[type]}
  */
 let store = configureStore();
-
-// FIXME: does it need to be initial here?
 store.dispatch({type:'SET_STATE'});
 
 /**

@@ -9,12 +9,11 @@ export default React.createClass({
 
     return (
       <nav>
-        <a href="#overlay" onClick={toggleOverlay}>Overlay</a>
-        <a href="#products">Product</a>
+        <a href="#overlay" className="transit" onClick={toggleOverlay}>Overlay</a>
+        <a href="#products" className="transit">Product</a>
           <a href="#login" className="align-right transit" onClick={toggleUser}>
             {secureUser? 'Logout' : 'Login'}
           </a>
-
         <UserAvatar {...this.props} />
       </nav>
     )
