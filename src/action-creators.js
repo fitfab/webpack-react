@@ -5,30 +5,26 @@
 
 import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, TOGGLE_BUSY } from './actionTypes';
 
-export function toggleUser(state) {
+export function toggleUser() {
   return {
-    type: TOGGLE_USER,
-    state
+    type: TOGGLE_USER
   }
 }
 
-export function toggleBusy(state){
+export function toggleBusy(){
   return {
     type: TOGGLE_BUSY,
-    state
   }
 }
 
-export function setstate(state){
+export function setstate(){
   return {
-    type: SET_STATE,
-    state
+    type: SET_STATE
   }
 }
 
-export function toggleOverlay(state) {
+export function toggleOverlay() {
   return {
-    type: TOGGLE_OVERLAY,
-    state 
+    type: TOGGLE_OVERLAY
   }
 }
