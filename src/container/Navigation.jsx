@@ -6,7 +6,7 @@ export default React.createClass({
   render: function(){
     // injected by connect() call
     const { toggleUser, toggleOverlay, toggleBusy, user, secureUser } = this.props;
-    console.log(this.props)
+
     return (
       <nav>
         <a href="#overlay" onClick={toggleOverlay}>Overlay</a>

@@ -28,12 +28,10 @@ const initialState = {
  * @param {[type]} action next value after the action`
  */
 export default function RooReducer(state = initialState, action) {
-  console.log(state)
   switch (action.type) {
     case SET_STATE:
       return state = initialState;
     case TOGGLE_USER:
-    console.log(action)
       // return the next state of the appliaction
       // this is equal to:
       // _extends({}, state, { secureUser: true });

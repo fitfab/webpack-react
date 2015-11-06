@@ -1,10 +1,12 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import createLogger from 'redux-logger';
 import RootReducer from '../RootReducer';
 
 // create a store that has redux-thunk middleware enabled
 const createStoreWidthMiddleware = applyMiddleware(
-  thunk
+  thunk,
+  createLogger()
 )(createStore);
 
 export default function configureStore(initialState) {
