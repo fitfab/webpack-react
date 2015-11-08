@@ -1,8 +1,13 @@
 import React from 'react';
 
-import UserAvatar from './../components/UserAvatar';
+import ManageAccount from './../components/ManageAccount';
 
 export default React.createClass({
+  handleLogin: function(e){
+    e.preventDefault();
+    this.props.toggleUserArea();
+
+  },
   render: function(){
     // injected by connect() call
     const { toggleUser, toggleOverlay, toggleBusy, user, secureUser } = this.props;
@@ -11,10 +16,9 @@ export default React.createClass({
       <nav>
         <a href="#overlay" className="transit" onClick={toggleOverlay}>Overlay</a>
         <a href="#products" className="transit">Product</a>
-          <a href="#login" className="align-right transit" onClick={toggleUser}>
-            {secureUser? 'Logout' : 'Login'}
+          <a href="#login" className="align-right transit" onClick={this.handleLogin}>
+            My Account
           </a>
-        <UserAvatar {...this.props} />
       </nav>
     )
   }

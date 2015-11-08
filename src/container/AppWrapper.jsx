@@ -13,6 +13,7 @@ import * as actionCreators from './../actions/action-creators';
 function mapStateToProps(state) {
   return {
     secureUser: state.secureUser,
+    userArea: state.userArea,
     busy: state.busy,
     overlayActive: state.overlayActive,
     products: state.products,

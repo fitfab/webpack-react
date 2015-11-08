@@ -1,0 +1,11 @@
+.login-form {
+  height: 200px;
+  display: none;
+  &.active {
+    display: block;
+  }
+  fieldset {
+    border: none;
+  }
+}
+

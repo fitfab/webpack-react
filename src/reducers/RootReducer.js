@@ -1,7 +1,7 @@
 /**
  * Reducer(Redux)
  */
-import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, BUSY } from './../actions/actionTypes';
+import { SET_STATE, TOGGLE_USER, TOGGLE_USER_AREA, TOGGLE_OVERLAY, BUSY } from './../actions/actionTypes';
 
 /**
  * Initial state of the application
@@ -9,6 +9,7 @@ import { SET_STATE, TOGGLE_USER, TOGGLE_OVERLAY, BUSY } from './../actions/actio
  */
 const initialState = {
   secureUser: false,
+  userArea: false,
   busy: false,
   overlayActive: false,
   products: [
@@ -18,7 +19,12 @@ const initialState = {
     {name: 'Besame', price:'5', year: '1960'},
     {name: 'Azucar', price:'13', year: '1988'},
   ],
-  user: {firstName:'Miguel', lastName: 'julio', username: 'fitfab', location: 'NYC'}
+  user: {
+    firstName:'Miguel',
+    lastName: 'julio',
+    username: 'fitfab',
+    password: 'p@ssword',
+    email: 'miguel.julio.developer@gmail.com'}
 }
 
 
@@ -36,6 +42,8 @@ export default function RooReducer(state = initialState, action) {
       // this is equal to:
       // _extends({}, state, { secureUser: true });
       return {...state, secureUser: !state.secureUser}
+    case TOGGLE_USER_AREA:
+      return {...state, userArea: !state.userArea}
     case BUSY:
       return {...state, busy:!state.busy};
     case TOGGLE_OVERLAY:
