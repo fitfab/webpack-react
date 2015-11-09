@@ -1,0 +1,21 @@
+input,
+button {
+  border-radius: 20px;
+  border: 1px solid $dark-primary-color;
+  padding: 10px 15px;
+  outline: none;
+  background: #E8EBEC;
+}
+
+fieldset {
+  border: none;
+  margin: 20px;
+  padding: 0;
+}
+
+button {
+  background: $accent-color;
+  &:hover {
+    background: $primary-color;
+  }
+}

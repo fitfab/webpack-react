@@ -9,11 +9,9 @@ export default React.createClass({
   },
   render: function() {
     let { toggleUser, toggleUserArea, secureUser, user } = this.props;
-    let userAvatar = secureUser? 'tooltip active transit' : 'tooltip transit';
     return (
-      <div >
+      <div className="welcome-msg">
         <a href="#logout" onClick={toggleUserArea} >X</a> Welcome {user.firstName} <a href="#logout" onClick={this.handleLogout} >logout</a>
-        
       </div>
     )
   }

@@ -10,16 +10,16 @@ export default React.createClass({
   showForm: function(){
     return (
       <div>
-        <h3 className="h3">Login/Register:</h3>
+        <p className="welcome-msg">Login/Register:</p>
         <form className="login-form active" onSubmit={this.handleSubmit}>
           <fieldset>
-            <input name="email" placeholder="First Name" />
+            <input name="email" type="text" placeholder="First Name" />
           </fieldset>
           <fieldset>
-            <input name="password" placeholder="password" />
+            <input name="password" type="password" placeholder="password" />
           </fieldset>
           <fieldset>
-            <input type="submit" value="go" />
+            <button type="submit" className="transit">Go</button>
           </fieldset>
         </form>
       </div>
