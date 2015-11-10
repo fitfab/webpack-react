@@ -12,7 +12,11 @@ body, h1, h2, h3, h4, h5, h6, p {
 }
 a {
   text-decoration: none;
-  color: #456;
+  color: #039BFB;
+  &:hover {
+    color: $white;
+    text-decoration: underline;
+  }
 }
 /* Helper classes */
 .align-right {
@@ -40,9 +44,9 @@ a {
   /*background: url(./../images/ferry-rain.jpg);*/
   position: fixed;
   top:0;
-  right:7%;
+  right:0;
   bottom: 0;
-  left:7%;
+  left:10%;
   overflow: hidden;
 
   .brand-logo {
@@ -97,7 +101,7 @@ a {
   }
 
   footer {
-    background: $dark-primary-color;
+    /* background: $dark-primary-color; */
     color: $white-color;
     position: absolute;
     height: 20px;

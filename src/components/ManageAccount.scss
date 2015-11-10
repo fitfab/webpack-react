@@ -3,8 +3,9 @@
   position: absolute;
   top: 0;
   right: -320px;
-  bottom: 20px;
-  background: rgba(151,175,185,.9);
+  bottom: 0;
+  background: #24343C;/* rgba(151,175,185,1); */
+  color: $white;
   width: 320px;
   z-index: 10;
   padding: 94px 0 0;
@@ -13,7 +14,7 @@
   }
 
   .welcome-msg {
-    background: $accent-color;
+    /* background: $accent-color; */
     padding: 10px 15px;
     /*margin: 0 20px 0 0;
     border-radius: 0 20px 20px 0;*/
