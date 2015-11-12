@@ -10,7 +10,7 @@ export default React.createClass({
   showForm: function(){
     return (
       <div>
-        <p className="welcome-msg">Login/Register:</p>
+        <h3 className="welcome-msg">Login / Register</h3>
         <form className="login-form active" onSubmit={this.handleSubmit}>
           <fieldset>
             <input name="email" type="text" placeholder="First Name" />

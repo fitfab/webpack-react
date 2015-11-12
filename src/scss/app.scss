@@ -40,7 +40,7 @@ a {
   /*background: url(./../images/ferry-rain.jpg);*/
   position: fixed;
   top:0;
-  right:7%;
+  right:0%;
   bottom: 0;
   left:7%;
   overflow: hidden;
@@ -97,7 +97,6 @@ a {
   }
 
   footer {
-    background: $dark-primary-color;
     color: $white-color;
     position: absolute;
     height: 20px;
