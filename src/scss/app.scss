@@ -12,7 +12,11 @@ body, h1, h2, h3, h4, h5, h6, p {
 }
 a {
   text-decoration: none;
-  color: #456;
+  color: #039BFB;
+  &:hover {
+    color: $primary-color;
+    text-decoration: underline;
+  }
 }
 /* Helper classes */
 .align-right {
@@ -37,16 +41,14 @@ a {
 
 .app-wrapper {
   background: $light-primary-color;
-  /*background: url(./../images/ferry-rain.jpg);*/
   position: fixed;
   top:0;
   right:0%;
   bottom: 0;
-  left:7%;
+  left:10%;
   overflow: hidden;
 
   .brand-logo {
-    /* background: url(./../images/fitfab_logo_2011.png); */
     background: $node;
     border: 2px solid $node;
     border-radius: 50px;
