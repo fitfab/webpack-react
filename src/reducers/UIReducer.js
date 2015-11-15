@@ -17,13 +17,6 @@ const initialState = {
   userArea: false,
   busy: false,
   overlayActive: false,
-  products: [
-    {name: 'Never Say Goodbye', price:'100', year: '1980'},
-    {name: 'Hello', price:'11', year: '2015'},
-    {name: 'we dont need another hero', price:'25', year: '1984'},
-    {name: 'Besame', price:'5', year: '1960'},
-    {name: 'Azucar', price:'13', year: '1988'},
-  ],
   user: {
     firstName:'Miguel',
     lastName: 'julio',
@@ -60,4 +53,5 @@ export default function UIReducer(state, action) {
     defautl:
       return state;
   }
+  return state;
 }

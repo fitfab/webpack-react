@@ -17,7 +17,8 @@ function mapStateToProps(state) {
     busy: state.UIReducer.busy,
     overlayActive: state.UIReducer.overlayActive,
     products: state.UIReducer.products,
-    user: state.UIReducer.user
+    user: state.UIReducer.user,
+    fetchData: state.NetworkReducer.fetchData
   };
 }
 

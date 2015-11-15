@@ -1,6 +1,7 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
+import { fetchData } from './../actions/NetworkActionCreators.js';
 import NetworkReducer from './../reducers/NetworkReducer';
 import UIReducer from './../reducers/UIReducer';
 
@@ -27,6 +28,9 @@ export default function configureStore(initialState) {
     })
   }*/
   store.dispatch({ type: 'SET_STATE' });
+  
+  // fetch data from firebase
+  store.dispatch(fetchData());
   return store;
 }
 

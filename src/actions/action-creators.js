@@ -3,7 +3,11 @@
  * 
  */
 
-import { SET_STATE, TOGGLE_USER, TOGGLE_USER_AREA, TOGGLE_OVERLAY, TOGGLE_BUSY } from './actionTypes';
+import { 
+  SET_STATE, TOGGLE_USER, 
+  TOGGLE_USER_AREA, TOGGLE_OVERLAY, 
+  TOGGLE_BUSY 
+} from './actionTypes';
 
 export function toggleUser() {
   return {
