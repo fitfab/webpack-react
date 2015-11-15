@@ -10,7 +10,6 @@ import configureStore from './store/configureStore';
  * @type {[type]}
  */
 let store = configureStore();
-store.dispatch({type:'SET_STATE'});
 
 /**
  * Warning: render(): Rendering components directly into
