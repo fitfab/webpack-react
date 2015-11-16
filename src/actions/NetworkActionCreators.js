@@ -82,8 +82,11 @@ export function fetchData() {
   }
 }
 
+// TODO: finish the implementation of register user
 export function registerUser() {
-  return function(){
-
+  return function(dispatch){
+    // 1. Informs that the request started
+    dispatch(requestBegin('firebase'))
+    return usersRef.push().set()
   }
 }

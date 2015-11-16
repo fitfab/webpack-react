@@ -6,13 +6,7 @@ import {
 } from './../actions/NetworkActionTypes';
 
 const networkInititalState = {
-    products: [
-      {name: 'Never Say Goodbye', price:'100', year: '1980'},
-      {name: 'Hello', price:'11', year: '2015'},
-      {name: 'we dont need another hero', price:'25', year: '1984'},
-      {name: 'Besame', price:'5', year: '1960'},
-      {name: 'Azucar', price:'13', year: '1988'}
-    ]
+    products: []
 }
 function updateMemberList(state, members){
 }
@@ -27,7 +21,10 @@ export default function NetworkReducer(state, action) {
     return Object.assign({}, state, {busy: !state.busy})
     case REQUEST_SUCCESS: 
     //return {...state, busy: !state.busy}
-    return Object.assign({}, state, {busy: !state.busy})
+    return Object.assign({}, state, {
+      busy: !state.busy,
+      products: action.data
+    })
     case REQUEST_FAILED:
     //return {...state, busy: !state.busy}
     return Object.assign({}, state, {busy: !state.busy})
