@@ -1,3 +1,4 @@
+'use stirct';
 import { combineReducers } from 'redux';
 import NetworkReducer from './NetworkReducer';
 import UIReducer from './UIReducer';

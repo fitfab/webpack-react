@@ -1,3 +1,4 @@
+'use stirct';
 import { 
   REQUEST_BEGIN,
   REQUEST_SUCCESS,
@@ -13,19 +14,24 @@ const networkInititalState = {
       {name: 'Azucar', price:'13', year: '1988'}
     ]
 }
+function updateMemberList(state, members){
+}
+
 export default function NetworkReducer(state, action) {
   if (typeof state === 'undefined') {
     return networkInititalState;
   }
   switch(action.type){
     case REQUEST_BEGIN:
-    return {...state, busy: !state.busy}
+    //return {...state, busy: !state.busy}
+    return Object.assign({}, state, {busy: !state.busy})
     case REQUEST_SUCCESS: 
-    return {...state, busy: !state.busy}
+    //return {...state, busy: !state.busy}
+    return Object.assign({}, state, {busy: !state.busy})
     case REQUEST_FAILED:
-    return {...state, busy: !state.busy}
-    default:
-    return state
+    //return {...state, busy: !state.busy}
+    return Object.assign({}, state, {busy: !state.busy})
   }
+  return state;
 };
 

@@ -51,7 +51,7 @@ export function requestFailed(error) {
 
 /**
  * 1st thunk creator using firebase as
- * my database
+ * the database
  *
  * http://rackt.org/redux/docs/advanced/AsyncActions.html
  */
@@ -67,17 +67,23 @@ export function fetchData() {
     // that the API call is starting.
 
     dispatch(requestBegin('firebase connection'))
-    usersRef.push().set({
+/*    usersRef.push().set({
         firstName:'Tom',
         lastName: 'Alper',
         username: 'samiam',
         password: 'p@ssword',
         email: 'thomas.alpers@gmail.com'
-    });
+    });*/
     return baseRef.child('users').on('value', function(snapshot){
-      console.log('snapshot: ',snapshot.val());
+      console.log('firebase snapshot: ',snapshot.val());
       dispatch(requestSuccess('firebase connection', snapshot.val()))
       return snapshot.val();
     })
+  }
+}
+
+export function registerUser() {
+  return function(){
+
   }
 }
