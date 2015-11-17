@@ -67,13 +67,7 @@ export function fetchData() {
     // that the API call is starting.
 
     dispatch(requestBegin('firebase connection'))
-/*    usersRef.push().set({
-        firstName:'Tom',
-        lastName: 'Alper',
-        username: 'samiam',
-        password: 'p@ssword',
-        email: 'thomas.alpers@gmail.com'
-    });*/
+
     return baseRef.child('users').on('value', function(snapshot){
       console.log('firebase snapshot: ',snapshot.val());
       dispatch(requestSuccess('firebase connection', snapshot.val()))

@@ -12,7 +12,7 @@ export default React.createClass({
     let accountView = secureUser? <UserAvatar {...this.props } /> : <Login {...this.props} />
     return (
       <div className={active}>
-        <span role="buttom" className="__user-area-close transit" onClick={this.props.toggleUserArea}></span>
+        <span role="buttom" className="__user-area-close transit" onClick={this.props.uiActions.toggleUserArea}></span>
         {accountView} 
       </div>
     )

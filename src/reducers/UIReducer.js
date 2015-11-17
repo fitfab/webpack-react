@@ -6,7 +6,7 @@
 import { 
   SET_STATE, TOGGLE_USER,
   TOGGLE_USER_AREA, TOGGLE_OVERLAY,
-  BUSY
+  TOGGLE_BUSY
 } from './../actions/actionTypes';
 
 /**
@@ -48,7 +48,7 @@ export default function UIReducer(state, action) {
     case TOGGLE_USER_AREA:
       //return {...state, userArea: !state.userArea}
       return Object.assign({}, state, {userArea: !state.userArea})
-    case BUSY:
+    case TOGGLE_BUSY:
       //return {...state, busy:!state.busy};
       return Object.assign({}, state, {busy:!state.busy})
     case TOGGLE_OVERLAY:

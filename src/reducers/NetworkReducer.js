@@ -15,6 +15,7 @@ export default function NetworkReducer(state, action) {
   if (typeof state === 'undefined') {
     return networkInititalState;
   }
+
   switch(action.type){
     case REQUEST_BEGIN:
     //return {...state, busy: !state.busy}
@@ -23,7 +24,7 @@ export default function NetworkReducer(state, action) {
     //return {...state, busy: !state.busy}
     return Object.assign({}, state, {
       busy: !state.busy,
-      products: action.data
+      products: action.products
     })
     case REQUEST_FAILED:
     //return {...state, busy: !state.busy}

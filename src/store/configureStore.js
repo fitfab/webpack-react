@@ -13,8 +13,8 @@ const createStoreWidthMiddleware = applyMiddleware(
 
 // TODO: create store with the combinedReducer
 const combinedReducers = combineReducers({
-  UIReducer,
-  NetworkReducer
+  UIState: UIReducer,
+  Network: NetworkReducer
 })
 
 export default function configureStore(initialState) {

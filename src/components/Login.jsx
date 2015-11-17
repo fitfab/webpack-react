@@ -5,7 +5,7 @@ export default React.createClass({
   displayName: 'Login',
   handleSubmit: function(e){
     e.preventDefault();
-    this.props.toggleUser();
+    this.props.uiActions.toggleUser();
   },
   showForm: function(){
     return (
