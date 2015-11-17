@@ -7,8 +7,6 @@ import {
 
 const networkInititalState = {
 }
-function updateMemberList(state, members){
-}
 
 export default function NetworkReducer(state, action) {
   if (typeof state === 'undefined') {
@@ -18,12 +16,12 @@ export default function NetworkReducer(state, action) {
   switch(action.type){
     case REQUEST_BEGIN:
     //return {...state, busy: !state.busy}
-    return Object.assign({}, state, {busy: !state.busy})
+    return Object.assign({}, state, {busy: true})
     case REQUEST_SUCCESS: 
     //return {...state, busy: !state.busy}
     console.log('REQUEST_SUCCESS',action)
     return Object.assign({}, state, {
-      busy: !state.busy,
+      //busy: !state.busy,
       products: action.data
     })
     case REQUEST_FAILED:

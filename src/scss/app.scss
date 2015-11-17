@@ -40,7 +40,7 @@ a {
 }
 
 .app-wrapper {
-  background: $light-primary-color;
+  background: $white;
   position: fixed;
   top:0;
   right:1%;
@@ -86,14 +86,14 @@ a {
       padding: 10px 15px;
       text-decoration: none;
       text-transform: uppercase;
-      color: $white;
+      color: #000;
       &:hover {
-        background: $white;
-        color: $black;
+        background: $dark-primary-color;
+        color: $white;
       }
       &.active {
-        background: $white;
-        color: $black;
+        background: $dark-primary-color;
+        color: $white;
       }
     }
   }
