@@ -1,6 +1,6 @@
 import Firebase from 'firebase';
 //import { firebaseUlr, users, products } from './../constants/Constants'
-import { 
+import {
   REQUEST_BEGIN,
   REQUEST_SUCCESS,
   REQUEST_FAILED
@@ -56,7 +56,7 @@ export function requestFailed(error) {
  * http://rackt.org/redux/docs/advanced/AsyncActions.html
  */
 export function fetchData() {
-
+    let list = [];
   // Thunk middleware knows how to handle functions.
   // It passes the dispatch method as an argument to the function,
   // thus making it able to dispatch actions itself.
@@ -69,7 +69,6 @@ export function fetchData() {
     dispatch(requestBegin('firebase connection'))
 
     return baseRef.child('users').on('value', function(snapshot){
-      console.log('firebase snapshot: ',snapshot.val());
       dispatch(requestSuccess('firebase connection', snapshot.val()))
       return snapshot.val();
     })
