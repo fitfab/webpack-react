@@ -16,6 +16,7 @@ fieldset {
 button {
   min-width: 4em;
   background: $accent-color;
+  color: #000;
   &:hover {
     background: $primary-color;
   }
