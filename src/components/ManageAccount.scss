@@ -21,8 +21,8 @@
     top: 15px;
     right: 15px;
     cursor: pointer;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     z-index: 10;
     border-radius: 40px;
     overflow: hidden;
@@ -33,21 +33,21 @@
     &:after {
       content: "";
       display: block;
-      height: 55px;
-      width: 55px;
+      height: 30px;
+      width: 30px;
       position: absolute;
       z-index: 9;
     }
     &:before {
       border-top: 2px solid $primary-color; 
       transform: rotate(45deg);
-      top: 11px;
-      left: -27px;
+      top: 9px;
+      left: -10px;
     }
     &:after {
       border-bottom: 2px solid $primary-color; 
-      left: -27px;
-      top: -28px;
+      top: -12px;
+      left: -10px;
       transform: rotate(-45deg);
     }
   }
