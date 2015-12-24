@@ -12,14 +12,14 @@ import * as networkActionCreators from './../actions/NetworkActionCreators';
  * @return {object} props for the component
  */
 function mapStateToProps(state) {
-  return {
-    secureUser: state.UIState.secureUser,
-    userArea: state.UIState.userArea,
-    busy: state.UIState.busy || state.Network.busy,
-    overlayActive: state.UIState.overlayActive,
-    products: state.Network.products,
-    user: state.UIState.user,
-  };
+    return {
+        secureUser: state.UIState.secureUser,
+        userArea: state.UIState.userArea,
+        busy: state.UIState.busy || state.Network.busy,
+        overlayActive: state.UIState.overlayActive,
+        products: state.Network.products,
+        user: state.UIState.user,
+    };
 }
 
 /**
@@ -37,6 +37,7 @@ function mapStateToProps(state) {
  * the return value will also be a single function.
  *
  * http://rackt.org/redux/docs/api/bindActionCreators.html
+ * 
  */
 function mapDispatchToProps(dispatch) {
 
@@ -45,10 +46,10 @@ function mapDispatchToProps(dispatch) {
   // component that isn’t aware of Redux,
   // and you don’t want to pass dispatch or
   // the Redux store to it.
-  return {
-    uiActions: bindActionCreators(actionCreators, dispatch),
-    networkActions: bindActionCreators(networkActionCreators, dispatch)
-  }
+    return {
+        uiActions: bindActionCreators(actionCreators, dispatch),
+        networkActions: bindActionCreators(networkActionCreators, dispatch)
+    }
 }
 
 /**
@@ -59,6 +60,6 @@ function mapDispatchToProps(dispatch) {
  * https://github.com/rackt/react-redux/blob/master/docs/api.md
  */
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-  )(Content)
+    mapStateToProps,
+    mapDispatchToProps
+)(Content)

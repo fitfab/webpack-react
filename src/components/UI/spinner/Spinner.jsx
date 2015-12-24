@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 require('./Spinner.scss');
 
 export default React.createClass({
+    displayName: 'Spinner',
 
-  showSpinner: function(){
-    return (<div className="spinner-loader">loading...</div>)
-  },
-  render: function(){
-    console.log('Spinner/props: ', this.props)
-    return (
-      this.props.busy? this.showSpinner() : null
-    )
-  }
-})
+    propTypes: {
+        busy: PropTypes.bool
+    },
+
+    showSpinner() {
+        return (<div className="spinner-loader">loading...</div>);
+    },
+    render() {
+        return (
+            this.props.busy ? this.showSpinner() : null
+        );
+    }
+});

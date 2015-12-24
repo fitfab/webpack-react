@@ -1,0 +1,5 @@
+# node modules directory is ignored by default
+# ignore ES5 files
+**/*.js
+# ignore artifacts
+dist
