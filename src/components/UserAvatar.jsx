@@ -4,7 +4,7 @@ export default React.createClass({
   displaName: 'UserAvatar',
   handleLogout: function(e){
     e.preventDefault()
-    this.props.toggleUser();
+    this.props.uiActions.toggleUser();
   },
   render: function() {
     let { user } = this.props;

@@ -1,10 +1,11 @@
+// form styles
 input,
 button {
   border-radius: 20px;
   border: 1px solid $dark-primary-color;
-  padding: 10px 15px;
+  padding: 5px 10px;
   outline: none;
-  background: #E8EBEC;
+  background: $white;
 }
 
 fieldset {
@@ -14,7 +15,10 @@ fieldset {
 }
 
 button {
+  min-width: 4em;
   background: $accent-color;
+  color: #000;
+
   &:hover {
     background: $primary-color;
   }

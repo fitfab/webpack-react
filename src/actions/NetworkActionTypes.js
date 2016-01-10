@@ -1,6 +1,6 @@
 /**
- * Network related action types 
- * 
+ * Network related action types
+ *
  */
 
 export const REQUEST_BEGIN = 'REQUEST_BEGIN';
