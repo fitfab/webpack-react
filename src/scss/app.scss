@@ -1,12 +1,25 @@
 /* SASS */
-@import "_variables"; 
+@import "_normalize.scss";
+@import "_variables";
+@import "_form.scss";
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:200);
-html { background: $primary-color;}
+/* html { background: $primary-color;} */
 body, h1, h2, h3, h4, h5, h6, p {
   margin: 0;
   padding: 0;
-  font-family: 'Work Sans', sans-serif;
-  -webkit-font-smoothing: antialiased 
+  font-family: 'Work Sans', 'Helvetica', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, h5, h6 {
+    padding: 20px;
+}
+a {
+  text-decoration: none;
+  color: #039BFB;
+  &:hover {
+    color: $primary-color;
+    text-decoration: underline;
+  }
 }
 /* Helper classes */
 .align-right {
@@ -30,17 +43,19 @@ body, h1, h2, h3, h4, h5, h6, p {
 }
 
 .app-wrapper {
- background: $light-primary-color;
+  background: $white;
   position: fixed;
   top:0;
-  right:7%;
+  right:10%;
   bottom: 0;
-  left:7%;
+  left:10%;
+  overflow: hidden;
+  border-right: 1px solid $light-primary-color;
+  border-left: 1px solid $light-primary-color;
 
   .brand-logo {
-    /* background: url(./../images/fitfab_logo_2011.png); */
-    background: $node;
-    border: 2px solid $node;
+    background: $r2w;
+    border: 2px solid $r2w;
     border-radius: 50px;
     width: 50px;
     height: 50px;
@@ -48,12 +63,13 @@ body, h1, h2, h3, h4, h5, h6, p {
     cursor: pointer;
     overflow: hidden;
     color: #fff;
+    padding: 0;
     span {
       margin-left: -5px;
       line-height: 50px;
       font-weight: 700;
     }
-    b { 
+    b {
       margin: 0px 1px;
       font-size: 20px;
       line-height: 50px;
@@ -61,27 +77,9 @@ body, h1, h2, h3, h4, h5, h6, p {
     i {
       margin-left: -5px;
       line-height: 50px;
-    }   
+    }
   }
-  .user-detail {
-    position: absolute;
-    width: 160px;
-    height: 80px;
-    border: 1px solid $white;
-    border-radius: 4px;
 
-    &:after {
-      content: "";
-      display: block;
-      transform: rotate(45deg);
-      background: pink;
-            height: 20px;
-      width: 20px;
-      position: absolute;
-      top: 70px;
-      left: 70px;
-    } 
-  }
   nav {
     background: $accent-color;
     position: relative;
@@ -91,24 +89,31 @@ body, h1, h2, h3, h4, h5, h6, p {
     }
     a {
       display: inline-block;
-      padding: 5px 20px;
+      padding: 10px 15px;
       text-decoration: none;
       text-transform: uppercase;
-      color: $white;
+      color: #000;
       &:hover {
-        background: $white;
-        color: $black;
+        background: $dark-primary-color;
+        color: $white;
       }
       &.active {
-        background: $white;
-        color: $black;
+        background: $dark-primary-color;
+        color: $white;
       }
     }
   }
-
+  .content {
+    position: absolute;
+    top: 133px;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
   footer {
-    background: $dark-primary-color;
-    color: $white-color;
+    color: $dark-primary-color;
     position: absolute;
     height: 20px;
     right: 0;
@@ -120,15 +125,15 @@ body, h1, h2, h3, h4, h5, h6, p {
       font-size: 10px;
       line-height: 2;
     }
-    
+
   }
 
   /* arrow */
-  .tooltip { 
+  .tooltip {
     width: auto;
-    position: absolute; 
-    background: $white; 
-    border: 1px solid $dark-primary-color; 
+    position: absolute;
+    background: $white;
+    border: 1px solid $dark-primary-color;
     border-radius: 4px;
     top: -15px;
     right: 10px;
@@ -145,28 +150,28 @@ body, h1, h2, h3, h4, h5, h6, p {
     /* Share defintion for sudo classes */
     &:after,
     &:before {
-      top: 100%; 
-      left: 80%; 
-      border: solid transparent; 
-      content: " "; 
-      height: 0; 
-      width: 0; 
-      position: absolute; 
+      top: 100%;
+      left: 80%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
       pointer-events: none;
     }
 
     &:after {
-      border-color: rgba(136, 183, 213, 0); 
-      border-top-color: $white; 
+      border-color: rgba(136, 183, 213, 0);
+      border-top-color: $white;
       border-width: 9px; margin-left: -9px;
     }
 
     &:before {
-      border-color: rgba(194, 225, 245, 0); 
-      border-top-color: $dark-primary-color; 
-      border-width: 10px; 
+      border-color: rgba(194, 225, 245, 0);
+      border-top-color: $dark-primary-color;
+      border-width: 10px;
       margin-left: -10px;
     }
-  } 
+  }
 
 }

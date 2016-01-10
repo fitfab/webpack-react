@@ -1,0 +1,25 @@
+// form styles
+input,
+button {
+  border-radius: 20px;
+  border: 1px solid $dark-primary-color;
+  padding: 5px 10px;
+  outline: none;
+  background: $white;
+}
+
+fieldset {
+  border: none;
+  margin: 20px;
+  padding: 0;
+}
+
+button {
+  min-width: 4em;
+  background: $accent-color;
+  color: #000;
+
+  &:hover {
+    background: $primary-color;
+  }
+}

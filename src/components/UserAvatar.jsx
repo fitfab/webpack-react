@@ -2,12 +2,15 @@ import React from 'react';
 
 export default React.createClass({
   displaName: 'UserAvatar',
+  handleLogout: function(e){
+    e.preventDefault()
+    this.props.uiActions.toggleUser();
+  },
   render: function() {
-    let { secureUser, user, left } = this.props;
-    let userAvatar = secureUser? 'tooltip active transit' : 'tooltip transit';
+    let { user } = this.props;
     return (
-      <div className={userAvatar}>
-        Welcome {user.firstName} 
+      <div className="welcome-msg">
+        Welcome {user.firstName} <a href="#logout" onClick={this.handleLogout} >logout</a>
       </div>
     )
   }
