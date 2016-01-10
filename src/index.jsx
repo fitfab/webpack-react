@@ -9,7 +9,7 @@ import configureStore from './store/configureStore';
  * Create a store from the reducer
  * @type {[type]}
  */
-let store = configureStore();
+const store = configureStore();
 
 /**
  * Warning: render(): Rendering components directly into
@@ -20,7 +20,7 @@ let store = configureStore();
  * Try rendering into a container element
  * created for your app.
  */
-let root = document.getElementById('root');
+const root = document.getElementById('root');
 
 /**
  * Warning: React.render is deprecated.
