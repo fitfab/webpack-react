@@ -46,12 +46,10 @@ a {
   background: $white;
   position: fixed;
   top:0;
-  right:10%;
+  right:0;
   bottom: 0;
-  left:10%;
+  left:0;
   overflow: hidden;
-  border-right: 1px solid $light-primary-color;
-  border-left: 1px solid $light-primary-color;
 
   .brand-logo {
     background: $r2w;

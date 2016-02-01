@@ -4,6 +4,7 @@ import createLogger from 'redux-logger';
 import { fetchData } from './../actions/NetworkActionCreators.js';
 import NetworkReducer from './../reducers/NetworkReducer';
 import UIReducer from './../reducers/UIReducer';
+import { routeReducer } from 'redux-simple-router';
 
 // create a store that has redux-thunk middleware enabled
 const createStoreWidthMiddleware = applyMiddleware(
@@ -11,9 +12,12 @@ const createStoreWidthMiddleware = applyMiddleware(
     createLogger()
 )(createStore);
 
-// TODO: create store with the combinedReducer
+// Create store with the combinedReducer
+// Note: recently add the routeReducer from
+// redux-simple-router
 const combinedReducers = combineReducers({
     UIState: UIReducer,
+    routing: routeReducer,
     Network: NetworkReducer
 });
 

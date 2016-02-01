@@ -18,7 +18,7 @@ function mapStateToProps(state) {
         busy: state.UIState.busy || state.Network.busy,
         overlayActive: state.UIState.overlayActive,
         products: state.Network.products,
-        user: state.UIState.user,
+        user: state.UIState.user
     };
 }
 
@@ -49,7 +49,7 @@ function mapDispatchToProps(dispatch) {
     return {
         uiActions: bindActionCreators(actionCreators, dispatch),
         networkActions: bindActionCreators(networkActionCreators, dispatch)
-    }
+    };
 }
 
 /**
@@ -62,4 +62,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Content)
+)(Content);

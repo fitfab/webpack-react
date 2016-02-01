@@ -1,8 +1,8 @@
 import React from 'react';
-
-import ManageAccount from './../components/ManageAccount';
+import { Link } from 'react-router';
 
 export default React.createClass({
+    displayName: 'Navigation',
 
     handleLogin(e) {
         e.preventDefault();
@@ -12,16 +12,17 @@ export default React.createClass({
 
         return (
             <nav>
-                <a href="#overlay" 
-                    className="transit"
-                    onClick={this.props.uiActions.toggleBusy} >Busy State</a>
-                <a href="#products"
-                    className="transit">Product</a>
-                <a href="#login"
-                    className="align-right transit" onClick={this.handleLogin} >
+                <Link className="transit"
+                    to="/">Home</Link>
+                <Link className="transit"
+                    to="products">Product</Link>
+                <a
+                    href="#account"
+                    className="align-right transit"
+                    onClick={this.handleLogin} >
                     My Account
                 </a>
             </nav>
-        )
+        );
     }
 });
