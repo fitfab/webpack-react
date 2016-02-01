@@ -1,15 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-
-import AppWrapper from './container/AppWrapper';
-import configureStore from './store/configureStore';
+import { Router, Route } from 'react-router';
+import { syncHistory, routeReducer } from 'redux-simple-router';
+import { createHistory } from 'history';
 
 /**
- * Create a store from the reducer
- * @type {[type]}
+ * 1) Containers -- top components that
+ * that routes will point to it
  */
+import AppWrapper from './container/AppWrapper';
+import Home from './container/Home';
+import Products from './components/products/Products';
+
+/**
+ * 2) Create a store from the reducer
+ */
+import configureStore from './store/configureStore';
 const store = configureStore();
+
+/**
+ * 3) Set the router using the containers
+ * as the entry point
+ */
+const routes = (<Route component={AppWrapper}>
+                    <Route path="/" component={Home} />
+                    <Route path="/products" component={Products} />
+                </Route>);
+
+const history = createHistory();
+/* redux simple router */
+syncHistory(history);
 
 /**
  * Warning: render(): Rendering components directly into
@@ -28,8 +49,10 @@ const root = document.getElementById('root');
  * from require('react-dom') instead.
  */
 ReactDOM.render(
-  <Provider store={store}>
-    <AppWrapper />
-  </Provider>,
-  root
-)
+    <Provider store={store}>
+        <Router history={history}>
+            {routes}
+        </Router>
+    </Provider>,
+    root
+);

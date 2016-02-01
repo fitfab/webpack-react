@@ -1,9 +1,10 @@
 var webpack = require('webpack');
+
 module.exports = {
-  context: __dirname + "/src",
-  entry: {
-    javascript: "./index.jsx",
-    html: "./index.html" 
+    context: __dirname + "/src",
+        entry: {
+        javascript: "./index.jsx",
+        html: "./index.html"
   },
   output: {
     filename: "index.js",
