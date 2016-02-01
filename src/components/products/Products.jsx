@@ -1,12 +1,25 @@
 import React, { PropTypes } from 'react';
+import { connect } from 'react-redux'
 import { map } from 'lodash';
 
 require('./Products.scss');
-export default React.createClass({
+export const Products = React.createClass({
     displayName: 'Products',
 
     propTypes: {
         products: PropTypes.object
+    },
+
+    componentWillMount() {
+        console.log('componentWillMount: Products');
+    },
+
+    componentDidMount() {
+        console.log('componentDidMount: Products');
+    },
+
+    componentWillUnmount() {
+        console.log('componentWillUnmount: Products');
     },
 
     renderItems() {
@@ -14,7 +27,13 @@ export default React.createClass({
         return (
             <ul className="product-list transit">
                 {map(this.props.products, function (product, key) {
-                    return <li className="product-list__item" key={key}>{product.firstName} -- email {product.email}</li>;
+                    return (
+                        <li
+                            className="product-list__item"
+                            key={key}>
+                            {product.firstName} -- email {product.email}
+                        </li>
+                    );
 
                 })}
             </ul>
@@ -29,3 +48,4 @@ export default React.createClass({
         );
     }
 });
+export default connect(null)(Products);
