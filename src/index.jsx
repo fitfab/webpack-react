@@ -11,7 +11,7 @@ import configureStore from './store/configureStore';
  * that routes will point to it
  */
 import AppWrapper from './container/AppWrapper';
-import Home from './container/Home';
+import Home from './components/Home/Home';
 import Products from './components/products/Products';
 
 /**

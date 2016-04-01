@@ -1,8 +1,7 @@
 import React from 'react';
-
 import Header from './Header';
 import Navigation from './Navigation';
-import ManageAccount from './../components/ManageAccount';
+import Account from './../components/Account/Account';
 import Spinner from './../components/UI/spinner/Spinner';
 import Footer from './Footer';
 
@@ -22,9 +21,10 @@ export default React.createClass({
     render() {
         return (
             <div className="app-wrapper transit">
-                <ManageAccount {...this.props } />
                 <Header />
                 <Navigation {...this.props} />
+                <Account {...this.props } />
+                {/* This is used by the router to include content */}
                 { this.props.children }
                 <Footer />
                 <Spinner {...this.props} />

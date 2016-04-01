@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default React.createClass({
-  displaName: 'UserAvatar',
+  displaName: 'Avatar',
   handleLogout: function(e){
     e.preventDefault()
     this.props.uiActions.toggleUser();

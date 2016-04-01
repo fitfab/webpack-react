@@ -5,18 +5,6 @@ require('./home.scss');
 export default React.createClass({
     displayName: 'Home',
 
-    componentWillMount() {
-        console.log('componentWillMount: Home');
-    },
-
-    componentDidMount() {
-        console.log('componentDidMount: Home');
-    },
-
-    componentWillUnmount() {
-        console.log('componentWillUnmount: Home');
-    },
-
     render() {
         return (
             <div className="home">

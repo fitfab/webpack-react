@@ -1,25 +1,12 @@
 import React from 'react';
 import classNames from 'classNames'; 
-import Login from './Login';
-import UserAvatar from './UserAvatar';
+import Login from './../Login/Login';
+import Avatar from './../Avatar/Avatar';
 
-require('./ManageAccount.scss');
+require('./Account.scss');
 
 export default React.createClass({
-    displaName: 'UserAvatar',
-
-    componentWillMount() {
-        console.log('componentWillMount: ManageAccount');
-    },
-
-    componentDidMount() {
-        console.log('componentDidMount: ManageAccount');
-    },
-
-    componentWillUnmount() {
-        console.log('componentWillUnmount: ManageAccount');
-    },
-
+    displaName: 'Acount',
 
     render() {
         const { secureUser, userArea } = this.props;
@@ -27,7 +14,7 @@ export default React.createClass({
             'user-area transit': true,
             'active': userArea
         });
-        const accountView = secureUser? <UserAvatar {...this.props } /> : <Login {...this.props} />
+        const accountView = secureUser? <Avatar {...this.props } /> : <Login {...this.props} />
         return (
           <div className={AcctManClasses}>
             <span role="buttom" className="__user-area-close transit" onClick={this.props.uiActions.toggleUserArea}></span>

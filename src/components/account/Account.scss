@@ -1,4 +1,4 @@
-@import "./../scss/_variables"; 
+@import "./../../scss/_variables";
 .user-area {
   position: absolute;
   top: 0;
@@ -7,6 +7,9 @@
   background: #E2E8EA;
   width: 320px;
   z-index: 10;
+  -webkit-box-shadow: inset 11px -2px 0px -10px rgba(133,133,133,1);
+     -moz-box-shadow: inset 11px -2px 0px -10px rgba(133,133,133,1);
+          box-shadow: inset 11px -2px 0px -10px rgba(133,133,133,1);
 
   &.active {
     right: 0;
@@ -39,13 +42,13 @@
       z-index: 9;
     }
     &:before {
-      border-top: 2px solid $primary-color; 
+      border-top: 2px solid $primary-color;
       transform: rotate(45deg);
       top: 9px;
       left: -10px;
     }
     &:after {
-      border-bottom: 2px solid $primary-color; 
+      border-bottom: 2px solid $primary-color;
       top: -12px;
       left: -10px;
       transform: rotate(-45deg);
