@@ -30,12 +30,11 @@ export function requestBegin(firebase) {
 
 /**
  * [requestSuccess description]
- * @param  {object} firebase database reference
  * @param  {object} response the database response
  * @return {obejct} action
  *
  */
-export function requestSuccess(firebase, response) {
+export function requestSuccess(response) {
     return {
         type: REQUEST_SUCCESS,
         data: response,
@@ -75,10 +74,10 @@ export function fetchData() {
             dispatch(requestSuccess('firebase', snapshot.val()));
         });
     };
-}
+};
 
-// TODO: finish the implementation of register user
-export function registerUser(user) {
+// TODO: revise the implementation of register user
+export function register(user) {
     console.log(user)
     return function (dispatch) {
         // 1. Informs that the request started
@@ -94,9 +93,35 @@ export function registerUser(user) {
                 console.log('Error creating user: ', error);
             } else {
                 console.log('user created: ', userData);
-                //dispatch(requestSuccess('firebase', snapshot.val()));
-                console.log(baseRef.getAuth());
+                dispatch(requestSuccess(userData));
             }
         });
     };
+};
+
+// TODO: revise the implementation of register user
+export function login(user) {
+    console.log('Login : ',user)
+    return function (dispatch) {
+        // 1. Informs that the request started
+        dispatch(requestBegin('firebase'));
+
+        // 2. authenticate user
+        baseRef.authWithPassword({
+            email: user.email,
+            password: user.password
+        }, function(error, authData){
+            if(error) {
+                dispatch(requestFailed(error));
+            } else {
+                dispatch(requestSuccess(authData));
+                console.log(authData);
+            }
+
+        },{
+            /* session exprire when browser closes */
+            remember: 'sessionOnly'
+        })
+    };
 }
+

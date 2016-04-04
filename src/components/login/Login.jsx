@@ -12,7 +12,8 @@ export const Login = React.createClass({
     propTypes: {
         secureUser: PropTypes.bool,
         networkActions: React.PropTypes.shape({
-            registerUser: PropTypes.func.isRequired
+            register: PropTypes.func.isRequired,
+            login: PropTypes.func.isRequired
         }),
         uiActions: PropTypes.object,
         user: PropTypes.object
@@ -36,9 +37,9 @@ export const Login = React.createClass({
 
     handleSubmit(event) {
         event.preventDefault();
-        console.log(event.target.value)
-        this.props.uiActions.toggleUser();
-        //this.props.networkActions.registerUser(this.state)
+        const action = event.target.value;
+        //this.props.uiActions.toggleUser();
+        this.props.networkActions[action](this.state)
     },
 
     showForm() {
