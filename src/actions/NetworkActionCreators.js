@@ -78,12 +78,25 @@ export function fetchData() {
 }
 
 // TODO: finish the implementation of register user
-export function registerUser() {
+export function registerUser(user) {
+    console.log(user)
     return function (dispatch) {
         // 1. Informs that the request started
         dispatch(requestBegin('firebase'));
 
         // 2. save new record
-        usersRef.push().set();
+        //usersRef.push().set();
+        baseRef.createUser({
+            email: user.email,
+            password: user.password
+        }, function(error,userData){
+            if(error) {
+                console.log('Error creating user: ', error);
+            } else {
+                console.log('user created: ', userData);
+                //dispatch(requestSuccess('firebase', snapshot.val()));
+                console.log(baseRef.getAuth());
+            }
+        });
     };
 }
