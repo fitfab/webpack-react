@@ -104,7 +104,7 @@ export function login(user) {
     console.log('Login : ',user)
     return function (dispatch) {
         // 1. Informs that the request started
-        dispatch(requestBegin('firebase'));
+        dispatch(requestBegin());
 
         // 2. authenticate user
         baseRef.authWithPassword({
