@@ -1,25 +1,24 @@
 import React, { PropTypes } from 'react';
-import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 import { map } from 'lodash';
+
+import * as actionCreators from './../../actions/action-creators';
+import * as networkActionCreators from './../../actions/NetworkActionCreators';
 
 require('./Products.scss');
 export const Products = React.createClass({
     displayName: 'Products',
 
     propTypes: {
+        networkActions: React.PropTypes.shape({
+            fetchData: PropTypes.func.isRequired
+        }),
         products: PropTypes.object
     },
 
-    componentWillMount() {
-        console.log('componentWillMount: Products');
-    },
-
     componentDidMount() {
-        console.log('componentDidMount: Products');
-    },
-
-    componentWillUnmount() {
-        console.log('componentWillUnmount: Products');
+        this.props.networkActions.fetchData();
     },
 
     renderItems() {
@@ -42,10 +41,69 @@ export const Products = React.createClass({
     render() {
         return (
             <div className="content">
-                <h3>Product List:</h3>
+                <h3>Product List</h3>
                 {this.renderItems()}
             </div>
         );
     }
 });
-export default connect(null)(Products);
+
+/**
+ * mapStateToProps -- as the name says it.
+ * map the given state to props to be pased down
+ * @param  {object} state
+ * @return {object} props for the component
+ */
+function mapStateToProps(state) {
+    return {
+        secureUser: state.UIState.secureUser,
+        userArea: state.UIState.userArea,
+        busy: state.UIState.busy || state.Network.busy,
+        overlayActive: state.UIState.overlayActive,
+        products: state.Network.products,
+        user: state.UIState.user
+    };
+}
+
+/**
+ * The only use case for bindActionCreators is when
+ * you want to pass some action creators down to a
+ * component that isn’t aware of Redux,
+ * and you don’t want to pass dispatch or
+ * the Redux store to it.
+ *
+ * @param  {function} dispatch
+ * @return {object}   An object mimicking the original
+ * object, but with each function immediately dispatching
+ * the action returned by the corresponding action creator.
+ * If you passed a function as actionCreators,
+ * the return value will also be a single function.
+ *
+ * http://rackt.org/redux/docs/api/bindActionCreators.html
+ */
+function mapDispatchToProps(dispatch) {
+
+    /**
+     * The only use case for bindActionCreators is when
+     * you want to pass some action creators down to a
+     * component that isn’t aware of Redux,
+     * and you don’t want to pass dispatch or
+     * the Redux store to it.
+     */
+    return {
+        uiActions: bindActionCreators(actionCreators, dispatch),
+        networkActions: bindActionCreators(networkActionCreators, dispatch)
+    };
+}
+
+/**
+ * Connects a React component(Products) to a Redux store.
+ * Returns a React component class that injects state and
+ * action creators into your component.
+ *
+ * https://github.com/rackt/react-redux/blob/master/docs/api.md
+ */
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Products);
