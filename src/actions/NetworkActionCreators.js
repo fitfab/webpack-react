@@ -22,7 +22,7 @@ const prodsRef = baseRef.child(FirebaseConfig.products);
  * @return {obejct} action indicating request begun
  *
  */
-export function requestBegin(firebase) {
+export function requestBegin() {
     return {
         type: REQUEST_BEGIN
     };
@@ -66,12 +66,12 @@ export function fetchData() {
 
         // First dispatch: the app state is updated to inform
         // that the API call is starting.
-        dispatch(requestBegin('firebase'));
+        dispatch(requestBegin());
 
         // 1st call to database and listen for changes
         baseRef.child('users').on('value', function (snapshot) {
             // dispatch a success action
-            dispatch(requestSuccess('firebase', snapshot.val()));
+            dispatch(requestSuccess(snapshot.val()));
         });
     };
 };
