@@ -2,25 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router';
-import { syncHistory, routeReducer } from 'redux-simple-router';
+import { syncHistory } from 'redux-simple-router';
 import { createHistory } from 'history';
+import configureStore from './store/configureStore';
 
 /**
  * 1) Containers -- top components that
  * that routes will point to it
  */
 import AppWrapper from './container/AppWrapper';
-import Home from './container/Home';
+import Home from './components/Home/Home';
 import Products from './components/products/Products';
 
 /**
- * 2) Create a store from the reducer
- */
-import configureStore from './store/configureStore';
-const store = configureStore();
-
-/**
- * 3) Set the router using the containers
+ * 2) Set the router using the containers
  * as the entry point
  */
 const routes = (<Route component={AppWrapper}>
@@ -31,6 +26,11 @@ const routes = (<Route component={AppWrapper}>
 const history = createHistory();
 /* redux simple router */
 syncHistory(history);
+
+/**
+ * 3) Create a store from the reducer
+ */
+const store = configureStore();
 
 /**
  * Warning: render(): Rendering components directly into
@@ -45,8 +45,7 @@ const root = document.getElementById('root');
 
 /**
  * Warning: React.render is deprecated.
- * Please use ReactDOM.render
- * from require('react-dom') instead.
+ * Use ReactDOM.render instead
  */
 ReactDOM.render(
     <Provider store={store}>
