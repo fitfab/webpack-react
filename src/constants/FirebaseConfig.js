@@ -5,5 +5,6 @@
 export default {
     url: 'https://fitfab.firebaseio.com/',
     users: 'users',
+    profiles: 'profiles',
     products: 'products'
 }

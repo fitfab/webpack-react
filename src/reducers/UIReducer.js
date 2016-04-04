@@ -18,13 +18,7 @@ const initialState = {
   userArea: false,
   busy: false,
   overlayActive: false,
-  user: {
-    firstName:'Miguel',
-    lastName: 'julio',
-    username: 'fitfab',
-    password: 'p@ssword',
-    email: 'miguel.julio.developer@gmail.com'}
-}
+  user: null
 
 
 /**
