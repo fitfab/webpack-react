@@ -86,9 +86,9 @@ a {
       padding: 10px 15px;
       text-decoration: none;
       text-transform: uppercase;
-      color: #000;
+      color: $white;
       &:hover {
-        background: $dark-primary-color;
+        background: darken($accent-color, 10%);
         color: $white;
       }
       &.active {
