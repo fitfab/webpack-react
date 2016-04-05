@@ -19,6 +19,7 @@ const initialState = {
   busy: false,
   overlayActive: false,
   user: null
+}
 
 
 /**
