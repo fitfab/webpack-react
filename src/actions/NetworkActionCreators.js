@@ -3,7 +3,13 @@ import FirebaseConfig from './../constants/FirebaseConfig';
 import {
     REQUEST_BEGIN,
     REQUEST_SUCCESS,
-    REQUEST_FAILED
+    REQUEST_FAILED,
+    LOGIN_REQUEST_BEGIN,
+    LOGIN_REQUEST_SUCCESS,
+    LOGIN_REQUEST_FAILED,
+    REGISTER_REQUEST_BEGIN,
+    REGISTER_REQUEST_SUCCESS,
+    REGISTER_REQUEST_FAILED
 } from './NetworkActionTypes';
 
 // To read and write data to and from a Firebase database,
@@ -99,7 +105,7 @@ export function register(user) {
     };
 };
 
-// TODO: revise the implementation of register user
+// TODO: revise the implementation of login user
 export function login(user) {
     console.log('Login : ',user)
     return function (dispatch) {

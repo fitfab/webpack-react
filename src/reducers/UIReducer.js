@@ -17,8 +17,7 @@ const initialState = {
   secureUser: false,
   userArea: false,
   busy: false,
-  overlayActive: false,
-  user: null
+  overlayActive: false
 }
 
 
@@ -35,19 +34,12 @@ export default function UIReducer(state, action) {
     case SET_STATE:
       return state = initialState;
     case TOGGLE_USER:
-      // return the next state of the appliaction
-      // this is equal to:
-      // _extends({}, state, { secureUser: true });
-      //return {...state, secureUser: !state.secureUser}
       return Object.assign({}, state, {secureUser: !state.secureUser})
     case TOGGLE_USER_AREA:
-      //return {...state, userArea: !state.userArea}
       return Object.assign({}, state, {userArea: !state.userArea})
     case TOGGLE_BUSY:
-      //return {...state, busy:!state.busy};
       return Object.assign({}, state, {busy:!state.busy})
     case TOGGLE_OVERLAY:
-      //return {...state, overlayActive: !state.overlayActive};
       return Object.assign({}, state, {overlayActive: !state.overlayActive})
   }
   return state;
