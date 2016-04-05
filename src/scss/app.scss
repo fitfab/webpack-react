@@ -26,20 +26,16 @@ a {
   float: right;
 }
 
-/* Transition definitions */
+// transit is a helper class that set transitions
+// in all properties of an element. So one can do:
+// <span class="pane transit slide-from-right">this will animate</span>
 .transit {
 
-  /* Fix flickering on Chrome and Safari */
-  -webkit-transform: translate3d(0, 0, 0);
-     -moz-transform: translate3d(0, 0, 0);
-      -ms-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
+    // Fix flickering on Chrome and Safari
+    transform: translate3d(0, 0, 0);
 
- /* Set transition for all properties */
-  -webkit-transition: all 500ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
-   -moz-transition: all 500ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
-     -o-transition: all 500ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
-        transition: all 500ms cubic-bezier(0.075, 0.820, 0.165, 1.000); /* easeOutCirc */
+    // Set transition for all properties
+    transition: all 500ms cubic-bezier(0.075, 0.82, 0.165, 1); // easeOutCirc
 }
 
 .app-wrapper {

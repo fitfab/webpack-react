@@ -9,7 +9,7 @@ export default React.createClass({
   render: function() {
     let { user } = this.props;
     return (
-      <div className="welcome-msg">
+      <div>
         Welcome {user.firstName} <a href="#logout" onClick={this.handleLogout} >logout</a>
       </div>
     )
