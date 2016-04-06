@@ -17,7 +17,8 @@ const initialState = {
   secureUser: false,
   userArea: false,
   busy: false,
-  overlayActive: false
+  overlayActive: false,
+  error: null
 }
 
 
@@ -28,7 +29,7 @@ const initialState = {
  */
 export default function UIReducer(state, action) {
   if (typeof state === 'undefined') {
-    return initialState
+    state = initialState
   }
   switch (action.type) {
     case SET_STATE:

@@ -56,11 +56,12 @@ export const Products = React.createClass({
  */
 function mapStateToProps(state) {
     return {
-        secureUser: state.UIState.secureUser,
-        userArea: state.UIState.userArea,
         busy: state.UIState.busy || state.Network.busy,
+        error: state.Network.error,
         overlayActive: state.UIState.overlayActive,
         products: state.Network.products,
+        secureUser: state.UIState.secureUser,
+        userArea: state.UIState.userArea,
         user: state.UIState.user
     };
 }

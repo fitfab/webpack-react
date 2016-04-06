@@ -5,8 +5,15 @@ import {
     REQUEST_FAILED
 } from './../actions/NetworkActionTypes';
 
-export default function NetworkReducer(state = {}, action) {
+const initialState = {
+    busy: false,
+    error: null
+}
 
+export default function NetworkReducer(state, action) {
+    if (typeof state === 'undefined') {
+        state = initialState
+    }
     switch(action.type){
 
         case REQUEST_BEGIN:
@@ -21,7 +28,10 @@ export default function NetworkReducer(state = {}, action) {
             break;
 
         case REQUEST_FAILED:
-            state = Object.assign({}, state, {busy: false});
+            state = Object.assign({}, state, {
+                busy: false,
+                error: action.error
+            });
             break;
     }
 

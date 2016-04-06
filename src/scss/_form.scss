@@ -2,7 +2,7 @@
 input,
 button {
   border-radius: 20px;
-  border: 1px solid $dark-primary-color;
+  border: 1px solid $light-primary-color;
   padding: 5px 10px;
   outline: none;
   background: $white;
@@ -16,7 +16,8 @@ fieldset {
 
 button {
   min-width: 4em;
-  background: $accent-color;
+  background: $light-primary-color;
+  border: 1px solid $dark-primary-color;
   color: #000;
 
   &:hover {

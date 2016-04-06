@@ -96,9 +96,8 @@ export function register(user) {
             password: user.password
         }, function(error,userData){
             if(error) {
-                console.log('Error creating user: ', error);
+                dispatch(requestFailed(error));
             } else {
-                console.log('user created: ', userData);
                 dispatch(requestSuccess(userData));
             }
         });
