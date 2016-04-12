@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Header';
 import Navigation from './Navigation';
 import Account from './../components/Account/Account';
-import Spinner from './../components/UI/spinner/Spinner';
+import Spinner from './../components/UI/Spinner/Spinner';
 import Footer from './Footer';
 
 require('./../scss/app.scss');

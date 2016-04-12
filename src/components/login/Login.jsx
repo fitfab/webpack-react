@@ -104,9 +104,11 @@ export const Login = React.createClass({
     },
 
     render() {
-        const { secureUser } = this.props;
+        const { secureUser, busy } = this.props;
         return (
-            secureUser ? null : this.showForm()
+            <div>
+                {this.showForm()}
+            </div>
         );
     }
 });
@@ -126,7 +128,7 @@ export const Login = React.createClass({
  */
 function mapStateToProps(state) {
     return {
-        busy: state.UIState.busy || state.Network.busy,
+        busy: state.Network.busy,
         error: state.Network.error,
         overlayActive: state.UIState.overlayActive,
         products: state.Network.products,
