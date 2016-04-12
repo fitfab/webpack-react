@@ -23,6 +23,7 @@ export default function NetworkReducer(state, action) {
         case REQUEST_SUCCESS:
             state = Object.assign({}, state, {
                 busy: false,
+                error: null,
                 products: action.data
             });
             break;

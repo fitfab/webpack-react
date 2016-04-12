@@ -1,26 +1,39 @@
 import React, { PropTypes } from 'react';
 import classNames from 'classNames'; 
-import Drawer from './../../Drawer/Drawer';
 require('./Message.scss');
 
 export default React.createClass({
     displayName: 'Message',
 
     propTypes: {
-        msgType: PropTypes.string
+        active: PropTypes.bool,
+        message: PropTypes.string,
+        messageType: PropTypes.string
     },
 
     getDefaultProps() {
         return {
-            msgType: 'notice'
+            active: false,
+            message: 'There was a problem! Try again later',
+            messageType: 'notice'
         };
     },
 
-    render() {
-        const classnames = classNames({this.props.msgType})
+    message() {
+        const showMessage = (this.props.active)? `message--active` : '';
+        const classnames = classNames('message', showMessage, `message--${this.props.messageType}`);
         return (
-            <div>
+            <div className={classnames}>
+                {this.props.message}
             </div>
+        )
+    },
+
+    render() {
+        console.log('Message: ', this.props)
+        const view = (this.props.active) ? this.message() : null;
+        return (
+             view 
         );
     }
 });

@@ -9,7 +9,8 @@ import {
     LOGIN_REQUEST_FAILED,
     REGISTER_REQUEST_BEGIN,
     REGISTER_REQUEST_SUCCESS,
-    REGISTER_REQUEST_FAILED
+    REGISTER_REQUEST_FAILED,
+    ERROR_ACKNOLEDGE
 } from './NetworkActionTypes';
 
 // To read and write data to and from a Firebase database,
@@ -44,6 +45,7 @@ export function requestSuccess(response) {
     return {
         type: REQUEST_SUCCESS,
         data: response,
+        error: null,
         receiveAt: Date.now()
     };
 }
@@ -54,6 +56,13 @@ export function requestFailed(error) {
         error: error,
         receiveAt: Date.now()
     };
+}
+
+export function errorAcknowledge() {
+    return {
+        type: ERROR_ACKNOLEDGE,
+        error: null
+    }
 }
 
 /**

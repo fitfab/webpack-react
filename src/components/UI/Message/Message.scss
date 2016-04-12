@@ -1,0 +1,29 @@
+.message {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 1500;
+    padding: 20px;
+    display: none;
+
+    &--active {
+        display: block;
+    }
+
+    &--error {
+        background: red;
+        color: white;
+    }
+
+    &--alert {
+        background: yellow;
+        color: #000;
+    }
+
+    &--notice {
+        background: #ccc;
+        color: #000;
+    }
+}

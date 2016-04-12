@@ -3,6 +3,7 @@ import Header from './Header';
 import Navigation from './Navigation';
 import Account from './../components/Account/Account';
 import Spinner from './../components/UI/Spinner/Spinner';
+import Message from './../components/UI/Message/Message';
 import Footer from './Footer';
 
 require('./../scss/app.scss');
@@ -19,6 +20,9 @@ export default React.createClass({
      * @return {html} this is the react view
      */
     render() {
+        console.log(this.props);
+        const toggleMessage = (this.props.error)? true : false;
+        const message = (this.props.error)? this.props.error.message : '';
         return (
             <div className="app-wrapper transit">
                 <Header />
@@ -28,6 +32,10 @@ export default React.createClass({
                 { this.props.children }
                 <Footer />
                 <Spinner {...this.props} />
+                <Message
+                    message={message}
+                    active={toggleMessage}
+                    messageType='error' />
             </div>
         );
     }
