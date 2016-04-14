@@ -26,14 +26,13 @@ export default React.createClass({
             <div className={classnames}>
                 {this.props.message}
             </div>
-        )
+        );
     },
 
     render() {
-        console.log('Message: ', this.props)
         const view = (this.props.active) ? this.message() : null;
         return (
-             view 
+             view
         );
     }
 });

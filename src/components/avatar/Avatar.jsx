@@ -14,12 +14,11 @@ const Avatar = React.createClass({
     },
 
     render() {
-        const { user } = this.props.user;
-        console.log('avatuser',user)
+
         return (
           <div>
-            Welcome!!!  <a href="#logout" onClick={this.handleLogout} >logout</a>
-
+            Welcome!!! {this.props.user.password.email}  <a href="#logout" onClick={this.handleLogout} >logout</a>
+            <img src={this.props.user.password.profileImageURL} />
           </div>
         );
     }

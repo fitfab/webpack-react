@@ -20,7 +20,6 @@ export default React.createClass({
      * @return {html} this is the react view
      */
     render() {
-        console.log(this.props);
         const toggleMessage = (this.props.error)? true : false;
         const message = (this.props.error)? this.props.error.message : '';
         return (

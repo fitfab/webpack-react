@@ -1,12 +1,10 @@
 import React from 'react';
-import classNames from 'classNames'; 
 import Login from './../Login/Login';
 import Avatar from './../Avatar/Avatar';
 import Drawer from './../Drawer/Drawer';
 
-
 export default React.createClass({
-    displaName: 'Acount',
+    displayName: 'Acount',
 
     render() {
         const { secureUser, userArea } = this.props;

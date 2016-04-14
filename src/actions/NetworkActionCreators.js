@@ -132,7 +132,7 @@ export function register(user) {
 
 // TODO: revise the implementation of login user
 export function login(user) {
-    console.log('Login : ', user);
+
     return function (dispatch) {
         // 1. Informs that the request started
         dispatch(requestBegin());
