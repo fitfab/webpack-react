@@ -1,17 +1,28 @@
 import React from 'react';
 
-export default React.createClass({
-  displaName: 'Avatar',
-  handleLogout: function(e){
-    e.preventDefault()
-    this.props.uiActions.toggleUser();
-  },
-  render: function() {
-    let { user } = this.props;
-    return (
-      <div>
-        Welcome {user.firstName} <a href="#logout" onClick={this.handleLogout} >logout</a>
-      </div>
-    )
-  }
+const Avatar = React.createClass({
+    displayName: 'Avatar',
+    propTypes: {
+        uiActions: React.PropTypes.shape({
+            toggleUser: React.PropTypes.func
+        }),
+        user: React.PropTypes.object
+    },
+    handleLogout(e) {
+        e.preventDefault();
+        this.props.uiActions.toggleUser();
+    },
+
+    render() {
+        const { user } = this.props.user;
+        console.log('avatuser',user)
+        return (
+          <div>
+            Welcome!!!  <a href="#logout" onClick={this.handleLogout} >logout</a>
+
+          </div>
+        );
+    }
 });
+
+export default Avatar;

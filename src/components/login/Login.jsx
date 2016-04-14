@@ -10,13 +10,12 @@ export const Login = React.createClass({
     displayName: 'Login',
 
     propTypes: {
-        secureUser: PropTypes.bool,
         networkActions: React.PropTypes.shape({
             register: PropTypes.func.isRequired,
             login: PropTypes.func.isRequired
         }),
-        uiActions: PropTypes.object,
-        user: PropTypes.object
+        secureUser: PropTypes.bool,
+        uiActions: PropTypes.object
 
     },
 
@@ -104,7 +103,7 @@ export const Login = React.createClass({
     },
 
     render() {
-        const { secureUser, busy } = this.props;
+
         return (
             <div>
                 {this.showForm()}
@@ -134,7 +133,7 @@ function mapStateToProps(state) {
         products: state.Network.products,
         secureUser: state.UIState.secureUser,
         userArea: state.UIState.userArea,
-        user: state.UIState.user
+        user: state.Network.user
     };
 }
 

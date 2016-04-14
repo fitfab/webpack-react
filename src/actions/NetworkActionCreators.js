@@ -62,7 +62,24 @@ export function errorAcknowledge() {
     return {
         type: ERROR_ACKNOLEDGE,
         error: null
-    }
+    };
+}
+
+export function loginRequestSuccess(payload) {
+    return {
+        type: LOGIN_REQUEST_SUCCESS,
+        payload,
+        error: null,
+        receiveAt: Date.now()
+    };
+}
+
+export function loginRequestFailed(error) {
+    return {
+        type: LOGIN_REQUEST_FAILED,
+        error: error,
+        receiveAt: Date.now()
+    };
 }
 
 /**
@@ -93,18 +110,18 @@ export function fetchData() {
 
 // TODO: revise the implementation of register user
 export function register(user) {
-    console.log(user)
+    console.log(user);
     return function (dispatch) {
         // 1. Informs that the request started
         dispatch(requestBegin('firebase'));
 
         // 2. save new record
-        //usersRef.push().set();
+        // usersRef.push().set();
         baseRef.createUser({
             email: user.email,
             password: user.password
-        }, function(error,userData){
-            if(error) {
+        }, function (error, userData) {
+            if (error) {
                 dispatch(requestFailed(error));
             } else {
                 dispatch(requestSuccess(userData));
@@ -115,7 +132,7 @@ export function register(user) {
 
 // TODO: revise the implementation of login user
 export function login(user) {
-    console.log('Login : ',user)
+    console.log('Login : ', user);
     return function (dispatch) {
         // 1. Informs that the request started
         dispatch(requestBegin());
@@ -124,18 +141,18 @@ export function login(user) {
         baseRef.authWithPassword({
             email: user.email,
             password: user.password
-        }, function(error, authData){
-            if(error) {
-                dispatch(requestFailed(error));
+        }, function (error, authData) {
+            if (error) {
+                dispatch(loginRequestFailed(error));
             } else {
-                dispatch(requestSuccess(authData));
-                console.log(authData);
+                dispatch(loginRequestSuccess(authData));
+
             }
 
-        },{
+        }, {
             /* session exprire when browser closes */
             remember: 'sessionOnly'
-        })
+        });
     };
 }
 

@@ -14,16 +14,16 @@ import {
  * @type {Object}
  */
 const initialState = {
-  secureUser: false,
-  userArea: false,
-  busy: false,
-  overlayActive: false,
-  error: null
-}
+    secureUser: false,
+    userArea: false,
+    busy: false,
+    overlayActive: false,
+    error: null
+};
 
 
 /**
- * Application Reducer(MVC? ohh this is controller from mvC!!)
+ * Application Reducer(MVC? ohh this is the controller from MVC!!)
  * @param {object} state 
  * @param {object} next state value
  */

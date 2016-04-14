@@ -13,13 +13,13 @@ import * as networkActionCreators from './../actions/NetworkActionCreators';
  */
 function mapStateToProps(state) {
     return {
-        busy: state.UIState.busy || state.Network.busy,
+        busy: state.Network.busy,
         error: state.Network.error,
         overlayActive: state.UIState.overlayActive,
         products: state.Network.products,
-        secureUser: state.UIState.secureUser,
+        secureUser: state.Network.secureUser,
         userArea: state.UIState.userArea,
-        user: state.UIState.user
+        user: state.Network.user
     };
 }
 
