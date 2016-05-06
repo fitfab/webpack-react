@@ -2,8 +2,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 import Content from './Content';
-import * as actionCreators from './../actions/action-creators';
-import * as networkActionCreators from './../actions/NetworkActionCreators';
+import * as actionCreators from 'actions/action-creators';
+import * as networkActionCreators from 'actions/NetworkActionCreators';
 
 /**
  * mapStateToProps -- as the name says it.

@@ -1,7 +1,7 @@
 import React from 'react';
-import Login from './../Login/Login';
-import Avatar from './../Avatar/Avatar';
-import Drawer from './../Drawer/Drawer';
+import Login from 'components/Login/Login';
+import Avatar from 'components/Avatar/Avatar';
+import Drawer from 'components/Drawer/Drawer';
 
 export default React.createClass({
     displayName: 'Acount',

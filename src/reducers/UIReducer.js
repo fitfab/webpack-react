@@ -7,7 +7,7 @@ import {
   SET_STATE, TOGGLE_USER,
   TOGGLE_USER_AREA, TOGGLE_OVERLAY,
   TOGGLE_BUSY
-} from './../actions/actionTypes';
+} from 'actions/actionTypes';
 
 /**
  * Initial state of the application

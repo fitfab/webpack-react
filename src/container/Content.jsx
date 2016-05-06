@@ -1,9 +1,9 @@
 import React from 'react';
 import Header from './Header';
 import Navigation from './Navigation';
-import Account from './../components/Account/Account';
-import Spinner from './../components/UI/Spinner/Spinner';
-import Message from './../components/UI/Message/Message';
+import Account from 'components/Account/Account';
+import Spinner from 'components/UI/Spinner/Spinner';
+import Message from 'components/UI/Message/Message';
 import Footer from './Footer';
 
 require('./../scss/app.scss');

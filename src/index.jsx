@@ -4,15 +4,15 @@ import { Provider } from 'react-redux';
 import { Router, Route } from 'react-router';
 import { syncHistory } from 'redux-simple-router';
 import { createHistory } from 'history';
-import configureStore from './store/configureStore';
+import configureStore from 'store/configureStore';
 
 /**
  * 1) Containers -- top components that
  * that routes will point to it
  */
-import AppWrapper from './container/AppWrapper';
-import Home from './components/Home/Home';
-import Products from './components/products/Products';
+import AppWrapper from 'container/AppWrapper';
+import Home from 'components/Home/Home';
+import Products from 'components/products/Products';
 
 /**
  * 2) Set the router using the containers

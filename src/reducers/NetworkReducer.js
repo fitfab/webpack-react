@@ -6,7 +6,7 @@ import {
     LOGIN_REQUEST_BEGIN,
     LOGIN_REQUEST_SUCCESS,
     LOGIN_REQUEST_FAILED
-} from './../actions/NetworkActionTypes';
+} from 'actions/NetworkActionTypes';
 
 const initialState = {
     busy: false,

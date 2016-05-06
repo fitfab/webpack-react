@@ -1,8 +1,8 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
-import NetworkReducer from './../reducers/NetworkReducer';
-import UIReducer from './../reducers/UIReducer';
+import NetworkReducer from 'reducers/NetworkReducer';
+import UIReducer from 'reducers/UIReducer';
 import { routeReducer } from 'redux-simple-router';
 
 // create a store that has redux-thunk middleware enabled
