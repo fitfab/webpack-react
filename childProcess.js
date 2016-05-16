@@ -8,7 +8,7 @@ var childProcess = require('child_process');
     }
 })*/
 
-var child = childProcess.exec('node -more');
+var child = childProcess.exec('ls -la && node -v && npm -v');
 
 child.stdout.on('data', function ( data ) {
     console.log('stdout: ', data);
