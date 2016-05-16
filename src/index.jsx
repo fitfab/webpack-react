@@ -1,3 +1,4 @@
+'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -30,6 +31,16 @@ const routes = (<Route component={AppWrapper}>
 const store = configureStore();
 
 const history = syncHistoryWithStore(browserHistory, store);
+
+/**
+ * Watch for navigation events, such as for analytics.
+ * Simply listen to the enhanced history via history.listen.
+ * This takes in a function that will receive a location
+ * any time the store updates. This includes any time travel
+ * activity performed on the store.
+ * history.listen(location => console.log(location.pathname))
+ */
+
 
 /**
  * Warning: render(): Rendering components directly into

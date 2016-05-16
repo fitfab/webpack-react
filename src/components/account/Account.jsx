@@ -1,3 +1,4 @@
+'use strict';
 import './Account.scss';
 
 import React from 'react';
