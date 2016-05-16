@@ -15,15 +15,6 @@ import Home from './components/Home/Home';
 import Products from './components/products/Products';
 
 /**
- * Set the router using the containers
- * as the entry point
- */
-const routes = (<Route component={AppWrapper}>
-                    <Route path="/" component={Home} />
-                    <Route path="/products" component={Products} />
-                </Route>);
-
-/**
  * 2) Create a store from the reducer
  */
 const store = configureStore();
@@ -47,9 +38,14 @@ const root = document.getElementById('root');
  */
 ReactDOM.render(
     <Provider store={store}>
+        <div>
         <Router history={history}>
-            {routes}
+            <Route path="/" component={AppWrapper}>
+                    <IndexRoute component={Home}/>
+                    <Route path="/products" component={Products} />
+            </Route>
         </Router>
+        </div>
     </Provider>,
     root
 );

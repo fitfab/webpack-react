@@ -5,7 +5,7 @@ import Account from './../components/Account/Account';
 import Spinner from './../components/UI/spinner/Spinner';
 import Footer from './Footer';
 
-require('./../scss/app.scss');
+import './../scss/app.scss';
 
 export default React.createClass({
     displayName: 'Content',

@@ -1,3 +1,5 @@
+import './Products.scss';
+
 import React, { PropTypes } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -6,7 +8,6 @@ import { map } from 'lodash';
 import * as actionCreators from './../../actions/action-creators';
 import * as networkActionCreators from './../../actions/NetworkActionCreators';
 
-require('./Products.scss');
 export const Products = React.createClass({
     displayName: 'Products',
 

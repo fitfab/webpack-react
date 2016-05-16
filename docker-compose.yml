@@ -1,0 +1,5 @@
+web:
+  image: fitfab/webexpbol:1.0
+  ports:
+    - "3000:3000"
+  command: npm start

@@ -1,6 +1,6 @@
-import React, { PropTypes } from 'react';
+import './Login.scss';
 
-require('./Login.scss');
+import React, { PropTypes } from 'react';
 
 export default React.createClass({
     displayName: 'Login',

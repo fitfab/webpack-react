@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 import createLogger from 'redux-logger';
 import NetworkReducer from './../reducers/NetworkReducer';
 import UIReducer from './../reducers/UIReducer';
-import { routeReducer } from 'redux-simple-router';
+import { routerReducer } from 'react-router-redux';
 
 // create a store that has redux-thunk middleware enabled
 const createStoreWidthMiddleware = applyMiddleware(
@@ -16,7 +16,7 @@ const createStoreWidthMiddleware = applyMiddleware(
 // redux-simple-router
 const combinedReducers = combineReducers({
     UIState: UIReducer,
-    routing: routeReducer,
+    routing: routerReducer,
     Network: NetworkReducer
 });
 

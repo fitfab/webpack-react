@@ -1,9 +1,9 @@
+import './Account.scss';
+
 import React from 'react';
 import classNames from 'classNames'; 
 import Login from './../Login/Login';
 import Avatar from './../Avatar/Avatar';
-
-require('./Account.scss');
 
 export default React.createClass({
     displaName: 'Acount',
