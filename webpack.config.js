@@ -30,7 +30,10 @@ module.exports = {
     })
   ],
   resolve : {
-      extensions : ['', '.js', '.jsx']
+    // Reoslve the './src' directory so we can avoid writing
+    // ../../components/view.jsx
+    modulesDirectories: ['node_modules', './src'],
+    extensions : ['', '.js', '.jsx']
   },
   module: {
     loaders: [{

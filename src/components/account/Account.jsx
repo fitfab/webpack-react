@@ -3,8 +3,8 @@ import './Account.scss';
 
 import React from 'react';
 import classNames from 'classNames'; 
-import Login from './../login/Login';
-import Avatar from './../avatar/Avatar';
+import Login from 'components/login/Login';
+import Avatar from 'components/avatar/Avatar';
 
 export default React.createClass({
     displaName: 'Acount',
