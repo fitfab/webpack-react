@@ -20,7 +20,7 @@ import Products from './components/products/Products';
  */
 const routes = (<Route component={AppWrapper}>
                     <IndexRoute component={Home} />
-                    <Route path="/home" component={Home} />
+                    <Route path="/" component={Home} />
                     <Route path="/products" component={Products} />
                 </Route>);
 

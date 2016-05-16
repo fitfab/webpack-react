@@ -13,7 +13,7 @@ export default React.createClass({
         return (
             <nav>
                 <Link className="transit"
-                    to="/home">Home</Link>
+                    to="/">Home</Link>
                 <Link className="transit"
                     to="products">Products</Link>
                 <a
