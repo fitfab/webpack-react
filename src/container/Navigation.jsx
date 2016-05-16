@@ -13,9 +13,9 @@ export default React.createClass({
         return (
             <nav>
                 <Link className="transit"
-                    to="/">Home</Link>
+                    to="/home">Home</Link>
                 <Link className="transit"
-                    to="products">Product</Link>
+                    to="products">Products</Link>
                 <a
                     href="#account"
                     className="align-right transit"

@@ -11,7 +11,7 @@ import configureStore from './store/configureStore';
  * that routes will point to it
  */
 import AppWrapper from './container/AppWrapper';
-import Home from './components/Home/Home';
+import Home from './components/home/Home';
 import Products from './components/products/Products';
 
 /**
@@ -19,7 +19,8 @@ import Products from './components/products/Products';
  * as the entry point
  */
 const routes = (<Route component={AppWrapper}>
-                    <Route path="/" component={Home} />
+                    <IndexRoute component={Home} />
+                    <Route path="/home" component={Home} />
                     <Route path="/products" component={Products} />
                 </Route>);
 
