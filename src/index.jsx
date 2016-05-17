@@ -7,6 +7,18 @@ import { syncHistoryWithStore } from 'react-router-redux';
 import { createHistory } from 'history';
 import configureStore from './store/configureStore';
 
+import injectTapEventPlugin from 'react-tap-event-plugin';
+
+//Needed for onTouchTap
+//Can go away when react 1.0 release
+//Check this repo:
+//https://github.com/zilverline/react-tap-event-plugin
+injectTapEventPlugin();
+
+import FlatButton from 'material-ui/FlatButton';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 /**
  * 1) Containers -- top components that
  * that routes will point to it
@@ -58,10 +70,12 @@ const root = document.getElementById('root');
  * Use ReactDOM.render instead
  */
 ReactDOM.render(
-    <Provider store={store}>
-        <Router history={history}>
-            {routes}
-        </Router>
-    </Provider>,
+    <MuiThemeProvider muiTheme={getMuiTheme()}>
+        <Provider store={store}>
+            <Router history={history}>
+                {routes}
+            </Router>
+        </Provider>
+    </MuiThemeProvider>,
     root
 );
