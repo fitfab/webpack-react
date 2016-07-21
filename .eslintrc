@@ -39,6 +39,13 @@
     "plugins": [
         "react"
     ],
+
+    "parserOptions": {
+        "sourceType": "module",
+        "ecmaFeatures": {
+          "jsx": true
+        }
+    },
     "rules": {
         "accessor-pairs": 0,
         "array-bracket-spacing": [2, "never"],
@@ -204,7 +211,7 @@
         "semi": 0,
         "semi-spacing": [0, {"before": false, "after": true}],
         "sort-vars": 0,
-        "space-after-keywords": [2, "always"],
+        "keyword-spacing": [2, {after: true}],
         "space-before-blocks": [2, "always"],
         "space-before-function-paren": [2, { "anonymous": "always", "named": "never" }],
         "space-before-keywords": 0,
@@ -221,10 +228,10 @@
         "wrap-iife": 0,
         "wrap-regex": 0,
         "yoda": [0, "never"],
+        "jsx-quotes": ["error", "prefer-double"],
         "react/display-name": 2,
         "react/jsx-boolean-value": 2,
         "react/jsx-no-undef": 2,
-        "react/jsx-quotes": [2, "double", "avoid-escape"],
         "react/jsx-sort-prop-types": 2,
         "react/jsx-sort-props": 0,
         "react/jsx-uses-react": 2,

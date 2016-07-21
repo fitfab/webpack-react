@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import classNames from 'classNames'; 
+import classNames from 'classNames';
 require('./Message.scss');
 
 export default React.createClass({
@@ -20,7 +20,7 @@ export default React.createClass({
     },
 
     message() {
-        const showMessage = (this.props.active)? `message--active` : '';
+        const showMessage = (this.props.active)? 'message--active' : '';
         const classnames = classNames('message', showMessage, `message--${this.props.messageType}`);
         return (
             <div className={classnames}>

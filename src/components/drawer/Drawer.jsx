@@ -20,6 +20,7 @@ const Drawer = React.createClass(/** @lends Drawer.prototype */{
     propTypes: {
         children: React.PropTypes.node,
         customClass: React.PropTypes.string,
+        isOpen: React.PropTypes.bool,
         onRequestClose: React.PropTypes.func,
         position: React.PropTypes.string,
         size: React.PropTypes.string
@@ -70,7 +71,7 @@ const Drawer = React.createClass(/** @lends Drawer.prototype */{
             <div
                 className={this.getClassSet()}
                 style={this.getDynamicStyle()}>
-                <span 
+                <span
                     role="buttom"
                     aria-hidden="true"
                     className={this.props.customClass}

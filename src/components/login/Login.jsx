@@ -10,7 +10,7 @@ export const Login = React.createClass({
     displayName: 'Login',
 
     propTypes: {
-        networkActions: React.PropTypes.shape({
+        networkActions: PropTypes.shape({
             register: PropTypes.func.isRequired,
             login: PropTypes.func.isRequired
         }),
